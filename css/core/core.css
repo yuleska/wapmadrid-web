@@ -1,0 +1,23 @@
+body {
+    background-color: #111;
+}
+
+.colorwhite {
+    color: #eee;
+}
+
+.purpleGrain {
+    color: #710096;
+}
+
+.greenApple {
+    color: #7dff00;
+}
+
+.blueHeart {
+    color: #017eff;
+}
+
+input.placeholderSize::-webkit-input-placeholder {
+    font-size: 11pt;
+}
