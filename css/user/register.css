@@ -8,7 +8,7 @@
 }
 
 #msform fieldset {
-    background: white;
+    background: #eee;
     border: 0 none;
     border-radius: 0px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -35,13 +35,12 @@
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
     color: #2C3E50;
     font-size: 13px;
 }
 /*buttons*/
 
-#msform .action-button {
+#msform .action-button-next {
     width: 100px;
     background: #f15900;
     font-weight: bold;
@@ -53,22 +52,40 @@
     margin: 10px 5px;
 }
 
-#msform .action-button:hover,
-#msform .action-button:focus {
+#msform .action-button-next:hover,
+#msform .action-button-next:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #f15900;
+}
+
+#msform .action-button-prev {
+    width: 100px;
+    background: #710096;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-prev:hover,
+#msform .action-button-prev:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #710096;
 }
 /*headings*/
 
 .fs-title {
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: bold;
     text-transform: uppercase;
-    color: #2C3E50;
+    color: #111;
     margin-bottom: 10px;
 }
 
 .fs-subtitle {
     font-weight: normal;
-    font-size: 13px;
+    font-size: 15px;
     color: #666;
     margin-bottom: 20px;
 }
@@ -86,7 +103,7 @@
     list-style-type: none;
     color: #eee;
     text-transform: uppercase;
-    font-size: 9px;
+    font-size: 11px;
     width: 33.33%;
     float: left;
     position: relative;
@@ -130,4 +147,16 @@
 #progressbar li.active:after {
     background: #f15900;
     color: white;
+}
+
+.selectRoute {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+    background: white;
 }
