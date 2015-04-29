@@ -21,3 +21,16 @@ body {
 input.placeholderSize::-webkit-input-placeholder {
     font-size: 11pt;
 }
+.registerZ
+{
+  z-index: 1!important;
+}
+.register
+{
+  z-index: 1!important;
+  background-color:#710096!important;
+  color: #eee !important;
+  font-weight: bold !important;
+  border-color: #710096!important;
+}
+
