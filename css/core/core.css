@@ -17,7 +17,26 @@ body {
 .blueHeart {
     color: #017eff;
 }
-
+.iniciarSesionFieldset {
+    margin: 25% 0;
+    border:0px;
+}
+.iniciarSesionIcon {
+    border: 0px;
+    border-radius: 0px !important;
+    background-color: #222;
+}
+.iniciarSesionInput {
+    border: 0px;
+    border-radius: 0px !important;
+    background-color: #eee;
+}
+.iniciarSesionBtn {
+    background-color: #f15900;
+    border-radius: 0px !important;
+    color: #222;
+    font-weight: bold;
+}
 input.placeholderSize::-webkit-input-placeholder {
     font-size: 11pt;
 }
