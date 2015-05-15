@@ -31,6 +31,7 @@
     checkCredentials();
     window.onload = function() {
         var username_admin = getCookie("username_admin");
+        alert(getCookie("id_admin"));
         $('#Username').val(username_admin);
         $('#usernameTitle').append(username_admin);
     };
@@ -157,7 +158,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button onclick="save()" class="btn btn-orange btn-block">Guardar Cambios</button>
+                                                            <button onclick="updatePassword(getCookie('id_admin'),getCookie('token_admin'))" class="btn btn-orange btn-block">Guardar Cambios</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->

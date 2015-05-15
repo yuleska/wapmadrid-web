@@ -27,6 +27,9 @@
 </head>
 
 <body>
+    <script>
+    checkCredentials();
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -149,7 +152,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="password" placeholder="contraseña" class="form-control" />
+                                                                            <input type="password" id="Password" placeholder="contraseña" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -159,7 +162,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="password" placeholder="contraseña" class="form-control" />
+                                                                            <input type="password" id="Image" placeholder="contraseña" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -171,7 +174,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="nombre CMS" class="form-control" />
+                                                                            <input type="text" id="Name" placeholder="nombre CMS" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -202,7 +205,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="email" placeholder="nombre@ejemplo.com" class="form-control" />
+                                                                            <input type="email" id="Route"placeholder="nombre@ejemplo.com" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -212,7 +215,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="text" placeholder="teléfono" class="form-control" />
+                                                                            <input type="text" placeholder="teléfono" id="Telephone" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -222,7 +225,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="text" placeholder="horario" class="form-control" />
+                                                                            <input type="text" placeholder="horario" id="OpeningHours" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -232,13 +235,13 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <textarea rows="3" class="form-control"></textarea>
+                                                                            <textarea rows="3" id="Address" class="form-control"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button type="submit" class="btn btn-orange btn-block">Crear CMS</button>
+                                                            <button onclick="registerCMS(getCookie('id_admin'),getCookie('token_admin'))" class="btn btn-orange btn-block">Crear CMS</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->
