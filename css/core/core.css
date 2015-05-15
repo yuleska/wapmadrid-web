@@ -17,42 +17,46 @@ body {
 .blueHeart {
     color: #017eff;
 }
-.iniciarSesionFieldset {
-    margin: 25% 0;
-    border:0px;
+
+.iniciarSesionMarginTop {
+    margin-top: 10%;
 }
+
 .iniciarSesionIcon {
     border: 0px;
     border-radius: 0px !important;
     background-color: #222;
 }
+
 .iniciarSesionInput {
     border: 0px;
     border-radius: 0px !important;
     background-color: #eee;
 }
+
 .iniciarSesionBtn {
     background-color: #f15900;
     border-radius: 0px !important;
     color: #222;
     font-weight: bold;
 }
+
 input.placeholderSize::-webkit-input-placeholder {
     font-size: 11pt;
 }
+
 input.placeholderSize1::-webkit-input-placeholder {
     font-size: 12pt;
 }
-.registerZ
-{
-  z-index: 1!important;
-}
-.register
-{
-  z-index: 1!important;
-  background-color:#710096!important;
-  color: #eee !important;
-  font-weight: bold !important;
-  border-color: #710096!important;
+
+.registerZ {
+    z-index: 1!important;
 }
 
+.register {
+    z-index: 1!important;
+    background-color: #710096!important;
+    color: #eee !important;
+    font-weight: bold !important;
+    border-color: #710096!important;
+}
