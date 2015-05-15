@@ -29,7 +29,7 @@ function updatePassword(id_in, token_in) {
 
 function updatePassword_connect(username_in, password_in, id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
-    var urlUpdate = urlBase + "/api/admin/update/password/:" + id_in
+    var urlUpdate = urlBase + "/api/admin/update/password/" + id_in
     $.ajax({
         url: urlUpdate,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -44,7 +44,7 @@ function updatePassword_connect(username_in, password_in, id_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                window.location.href = "cms-register.html"
+                window.location.href = "cms-register.html";
             } else
                 alert("Error al guardar los cambios");
         },
@@ -52,4 +52,5 @@ function updatePassword_connect(username_in, password_in, id_in, token_in) {
             alert("No se ha podido realizar la peticion");
         }
     });
+    return false;
 }
