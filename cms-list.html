@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
-     <link type="text/css" rel="stylesheet" href="styles/jplist-custom.css">
+    <link type="text/css" rel="stylesheet" href="styles/jplist-custom.css">
 </head>
 
 <body>
@@ -94,74 +94,99 @@
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
-                                
-                                            <div class="col-md-12">
-                                                <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
-                                                </div>
-                                            </div>
-                                
-                            </div>
-
-                            <div class="col-lg-12">
-                            
-                            <div class="page-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-body">
-                                <div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Buscador</div>
-                                    <div class="jplist-panel box panel-top">
-                                        <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Resetear<i class="fa fa-share mls"></i></button>
-                                        <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 por página</span></li>
-                                                <li><span data-number="5"> 5 por página</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 por página</span></li>
-                                                <li><span data-number="all"> ver todos</span></li>
-                                            </ul>
-                                        </div>
-                                        <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-path="default">Ordenar por</span></li>
-                                                <li><span data-path=".title" data-order="asc" data-type="text">Nombre A-Z</span></li>
-                                                <li><span data-path=".title" data-order="desc" data-type="text">Nombre Z-A</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="text-filter-box">
-                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input data-path=".title" type="text" value="" placeholder="Nombre CMS" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" class="form-control"/></div>
-                                        </div>
-                                        
-                                        <div data-type="Página {current} de {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
-                                    </div>
-                                    <div class="box text-shadow">
-                                        <table class="demo-tbl"><!--<item>1</item>-->
-                                            <tr class="tbl-item" style="background-color:#dbdbdb"><!--<img/>-->
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">CMS Arganzuela</p></div><div class="col-md-2"><span class="btn btn-orange">Editar</span></div></div></td>
-                                            </tr>
-                                            <tr class="tbl-item"><!--<img/>-->
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">CMS San blas</p></div><div class="col-md-2"><span class="btn btn-orange">Editar</span></div></div></td>
-                                            </tr>
-                                            <tr class="tbl-item" style="background-color:#dbdbdb"><!--<img/>-->
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">CMS villaverde</p></div><div class="col-md-2"><span class="btn btn-orange">Editar</span></div></div></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="box jplist-no-results text-shadow align-center"><p>No se encontro resultados</p></div>
-                                    <div class="jplist-panel box panel-bottom">
-                                        <div data-type="{start} - {end} de {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
+                                <div class="col-md-12">
+                                    <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                            
+                            <div class="col-lg-12">
+                                <div class="page-content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel">
+                                                <div class="panel-body">
+                                                    <div id="grid-layout-table-1" class="box jplist">
+                                                        <div class="jplist-ios-button"><i class="fa fa-sort"></i>Buscador</div>
+                                                        <div class="jplist-panel box panel-top">
+                                                            <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Resetear<i class="fa fa-share mls"></i></button>
+                                                            <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
+                                                                <ul class="dropdown-menu">
+                                                                    <li><span data-number="3"> 3 por página</span></li>
+                                                                    <li><span data-number="5"> 5 por página</span></li>
+                                                                    <li><span data-number="10" data-default="true"> 10 por página</span></li>
+                                                                    <li><span data-number="all"> ver todos</span></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
+                                                                <ul class="dropdown-menu">
+                                                                    <li><span data-path="default">Ordenar por</span></li>
+                                                                    <li><span data-path=".title" data-order="asc" data-type="text">Nombre A-Z</span></li>
+                                                                    <li><span data-path=".title" data-order="desc" data-type="text">Nombre Z-A</span></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="text-filter-box">
+                                                                <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                                                    <input data-path=".title" type="text" value="" placeholder="Nombre CMS" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" class="form-control" />
+                                                                </div>
+                                                            </div>
+                                                            <div data-type="Página {current} de {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
+                                                            <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
+                                                        </div>
+                                                        <div class="box text-shadow">
+                                                            <table class="demo-tbl">
+                                                                <!--<item>1</item>-->
+                                                                <tr class="tbl-item" style="background-color:#dbdbdb">
+                                                                    <!--<img/>-->
+                                                                    <td class="">
+                                                                        <div class="row">
+                                                                            <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
+                                                                            <div class="col-md-9">
+                                                                                <p class="title">CMS Arganzuela</p>
+                                                                            </div>
+                                                                            <div class="col-md-2"><span class="btn btn-orange">Editar</span></div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="tbl-item">
+                                                                    <!--<img/>-->
+                                                                    <td class="">
+                                                                        <div class="row">
+                                                                            <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
+                                                                            <div class="col-md-9">
+                                                                                <p class="title">CMS San blas</p>
+                                                                            </div>
+                                                                            <div class="col-md-2"><span class="btn btn-orange">Editar</span></div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="tbl-item" style="background-color:#dbdbdb">
+                                                                    <!--<img/>-->
+                                                                    <td class="">
+                                                                        <div class="row">
+                                                                            <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
+                                                                            <div class="col-md-9">
+                                                                                <p class="title">CMS villaverde</p>
+                                                                            </div>
+                                                                            <div class="col-md-2"><span class="btn btn-orange">Editar</span></div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box jplist-no-results text-shadow align-center">
+                                                            <p>No se encontro resultados</p>
+                                                        </div>
+                                                        <div class="jplist-panel box panel-bottom">
+                                                            <div data-type="{start} - {end} de {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
+                                                            <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -207,8 +232,8 @@
     <script src="script/modernizr.min.js"></script>
     <script src="script/jplist.min.js"></script>
     <script src="script/jplist.js"></script>
-
     <!--CORE JAVASCRIPT-->
     <script src="script/main.js"></script>
 </body>
+
 </html>
