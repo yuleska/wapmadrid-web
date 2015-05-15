@@ -35,7 +35,7 @@ function registerCMS(id_in, token_in) {
 
 function registerCMS_connect(id_in, token_in, username_in, password_in, route_in, name_in, image_in, address_in, telephone_in, openingHours_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRegister = urlBase + "/admin/cms/register/:" + id_in
+    var urlRegister = urlBase + "/api/admin/cms/register/" + id_in
     $.ajax({
         url: urlRegister,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -57,8 +57,7 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                alert("Cambios guardados");
-                window.location.href = "cms-register.html"
+                window.location.href = "cms-list.html"
             } else
                 alert("Error al guardar los cambios");
         },
