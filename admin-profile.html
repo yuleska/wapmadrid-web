@@ -23,9 +23,18 @@
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    <script type="text/javascript" src="js/admin-profile.js"></script>
 </head>
 
 <body>
+    <script>
+    checkCredentials();
+    window.onload = function() {
+        var username_admin = getCookie("username_admin");
+        $('#Username').val(username_admin);
+        $('#usernameTitle').append(username_admin);
+    };
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -101,7 +110,7 @@
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>Perfil Admin: Usuario Admin</h2>
+                                        <h2 id="usernameTitle">Perfil Admin: </h2>
                                         <div class="row mtl">
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -122,7 +131,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="nombre de usuario" class="form-control" />
+                                                                            <input type="text" id="Username" placeholder="nombre de usuario" class="form-control" disabled/>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -132,7 +141,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="password" placeholder="contraseña" class="form-control" />
+                                                                            <input type="password" id="Password" placeholder="contraseña" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -148,7 +157,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button type="submit" class="btn btn-orange btn-block">Guardar Cambios</button>
+                                                            <button onclick="save()" class="btn btn-orange btn-block">Guardar Cambios</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->

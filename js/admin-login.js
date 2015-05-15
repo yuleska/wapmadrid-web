@@ -28,8 +28,9 @@ function login_connect(username_in, password_in) {
                 var id = json._id;
                 var token = json.token;
                 //Use cookies if user wants to remember his session           
-                document.cookie = "id=" + id;
-                document.cookie = "token=" + token;
+                document.cookie = "id_admin=" + id;
+                document.cookie = "token_admin=" + token;
+                document.cookie = "username_admin=" + username_in;
                 window.location.href = "cms-register.html"
             } else
                 alert("Contraseña y/o usuario incorrectos");
