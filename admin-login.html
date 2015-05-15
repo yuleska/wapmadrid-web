@@ -4,7 +4,7 @@
 <HEAD>
     <META charset="UTF-8">
     <META name="viewport" content="width=device-width, initial-scale=1.0">
-    <TITLE>wapmadrid | admin</TITLE>
+    <TITLE>wapmadrid | admin login</TITLE>
     <link rel="shortcut icon" href="images/icons/favicon.png">
     <link rel="apple-touch-icon" href="images/icons/favicon.png">
     <LINK rel="stylesheet" type="text/css" href="libraries/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/core/orange.css">
     <!-- skin color -->
     <link rel="stylesheet" type="text/css" href="css/core/responsive.css">
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/admin-login.js"></script>
 </HEAD>
 
 <BODY>
@@ -70,17 +70,17 @@
                     <div class="form-group">
                         <div class=" input-group input-group-lg">
                             <span class="iniciarSesionIcon input-group-addon" id="basic-addon1"><i class="text-muted glyphicon glyphicon-user"></i></span>
-                            <input type="text" id="username" name="username" class="form-control iniciarSesionInput placeholderSize" placeholder="Nombre de usuario">
+                            <input type="text" id="Username" class="form-control iniciarSesionInput placeholderSize1" placeholder="Nombre de usuario">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class=" input-group input-group-lg">
                             <span class="iniciarSesionIcon input-group-addon" id="basic-addon1"><i class="text-muted glyphicon glyphicon-asterisk"></i></span>
-                            <input type="password" id="password" name="password" class="iniciarSesionInput form-control placeholderSize" placeholder="Contraseña">
+                            <input type="password" id="Password" class="iniciarSesionInput form-control placeholderSize1" placeholder="Contraseña">
                         </div>
                     </div>
                     <div class="text-center form-group">
-                        <button type="submit" class="iniciarSesionBtn btn btn-lg btn-block">Iniciar sesión</button>
+                        <button onclick="login()" class="iniciarSesionBtn btn btn-lg btn-block">Iniciar sesión</button>
                     </div>
                 </fieldset>
             </form>

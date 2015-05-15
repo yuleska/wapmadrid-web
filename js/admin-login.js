@@ -4,13 +4,13 @@ function login() {
     if (username == "") {
         alert("Se debe introcucir un nombre de usuario");
     } else if (password == "") {
-        alert("Se debe introducir una contraseña");
+        alert("Se debe introducir una contraseÃ±a");
     } else login_connect(username, password);
 }
 
 function login_connect(username_in, password_in) {
     var urlBase = "http://192.168.1.43:3100";
-    var urlLogin = urlBase + "/api/cms/login"
+    var urlLogin = urlBase + "/api/admin/login"
     $.ajax({
         url: urlLogin,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -27,12 +27,12 @@ function login_connect(username_in, password_in) {
             if (json.error == "0") {
                 var id = json._id;
                 var token = json.token;
-                //Use cookies if user wants to remember his session						
+                //Use cookies if user wants to remember his session           
                 document.cookie = "id=" + id;
                 document.cookie = "token=" + token;
-                window.location.href = "home.html"
+                window.location.href = "admin-home.html"
             } else
-                alert("Contraseña y/o usuario incorrectos");
+                alert("ContraseÃ±a y/o usuario incorrectos");
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");

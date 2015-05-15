@@ -40,6 +40,9 @@ body {
 input.placeholderSize::-webkit-input-placeholder {
     font-size: 11pt;
 }
+input.placeholderSize1::-webkit-input-placeholder {
+    font-size: 12pt;
+}
 .registerZ
 {
   z-index: 1!important;
