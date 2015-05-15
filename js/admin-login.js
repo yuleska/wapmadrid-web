@@ -30,7 +30,7 @@ function login_connect(username_in, password_in) {
                 //Use cookies if user wants to remember his session           
                 document.cookie = "id=" + id;
                 document.cookie = "token=" + token;
-                window.location.href = "admin-home.html"
+                window.location.href = "cms-register.html"
             } else
                 alert("Contraseña y/o usuario incorrectos");
         },

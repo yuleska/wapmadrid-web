@@ -9,7 +9,7 @@ function login() {
 }
 
 function login_connect(username_in, password_in) {
-    var urlBase = "http://192.168.1.43:3100";
+    var urlBase = "http://www.proyectowap.tk";
     var urlLogin = urlBase + "/api/cms/login"
     $.ajax({
         url: urlLogin,
