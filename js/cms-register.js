@@ -57,15 +57,10 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                var id = json._id;
-                var token = json.token;
-                //Use cookies if user wants to remember his session           
-                document.cookie = "id_admin=" + id;
-                document.cookie = "token_admin=" + token;
-                document.cookie = "username_admin=" + username_in;
+                alert("Cambios guardados");
                 window.location.href = "cms-register.html"
             } else
-                alert("Contraseña y/o usuario incorrectos");
+                alert("Error al guardar los cambios");
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
