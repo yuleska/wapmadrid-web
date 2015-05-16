@@ -26,6 +26,14 @@
 </head>
 
 <body>
+    <script>
+    checkCredentials();
+    window.onload = function() {
+        var username_admin = getCookie("username");
+        $('#Username').val(username_admin);
+        $('#usernameTitle').append(username_admin);
+    };
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -149,7 +157,7 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active"><a href="#tab-edit-profile" data-toggle="tab">Editar perfil</a></li>
+                                                    <li class="active"><a href="#tab-edit-profile" data-toggle="tab">Perfil CMS</a></li>
                                                 </ul>
                                                 <div id="generalTabContent" class="tab-content">
                                                     <div id="tab-edit-profile" class="tab-pane fade in active">
@@ -179,7 +187,7 @@
                                                                 <label class="col-sm-3 control-label">Teléfono</label>
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
-                                                                        <div class="col-xs-4">
+                                                                        <div class="col-xs-9">
                                                                             <input type="text" placeholder="teléfono" class="form-control" />
                                                                         </div>
                                                                     </div>
@@ -189,7 +197,7 @@
                                                                 <label class="col-sm-3 control-label">Horario</label>
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
-                                                                        <div class="col-xs-4">
+                                                                        <div class="col-xs-9">
                                                                             <input type="text" placeholder="horario" class="form-control" />
                                                                         </div>
                                                                     </div>
@@ -206,7 +214,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button type="submit" class="btn btn-orange btn-block">Guardar Cambios</button>
+                                                            <!-- <button type="submit" class="btn btn-orange btn-block">Guardar Cambios</button>-->
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->

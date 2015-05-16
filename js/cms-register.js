@@ -46,9 +46,9 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             "token": token_in,
             "username": username_in,
             "password": password_in,
-            "route": route_in,
+            //"route": route_in,
             "name": name_in,
-            "image": image_in,
+           //"image": image_in,
             "address": address_in,
             "telephone": telephone_in,
             "openingHours": openingHours_in
