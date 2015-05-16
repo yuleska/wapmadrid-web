@@ -33,6 +33,7 @@ function readCMS_connect(id_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
+                $('#CMSname').append(r.responseJSON.name);
                 $('#CMSname1').append(r.responseJSON.name);
                 $('#Username').append(r.responseJSON.username);
                 $('#CMSname2').val(r.responseJSON.name);
