@@ -110,6 +110,7 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
+                alert("wappy creado");
                 window.location.href = "home.html"
             } else
                 alert("Error al guardar los cambios");
