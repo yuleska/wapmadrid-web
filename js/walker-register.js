@@ -36,7 +36,7 @@ function readCMS_connect(id_in, token_in) {
                 $('#CMSname').append(r.responseJSON.name);               
             } else
                 alert("Error al leer los cambios");
-                return null;
+               
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
@@ -110,7 +110,6 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                alert("wappy creado");
                 window.location.href = "home.html"
             } else
                 alert("Error al guardar los cambios");
