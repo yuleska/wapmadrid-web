@@ -43,3 +43,38 @@ function readCMS_connect(id_in, token_in) {
         }
     });
 }
+
+function readWappies_connect(id_in, token_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRegister = urlBase + "/api/cms/walker/list/" + id_in
+    $.ajax({
+        url: urlRegister,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                for (i in r.responseJSON.walkers) {
+                    if (i%2 == 0){
+                        $('#listWalkers').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
+                    }else{
+                        $('#listWalkers').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
+
+                    }
+                    console.log(r.responseJSON.walkers[i].walkerID);
+                }              
+            } else
+                alert("Error al leer los cambios");
+               
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}
