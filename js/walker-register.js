@@ -45,21 +45,24 @@ function readCMS_connect(id_in, token_in) {
 }
 
 function registerWalker(id_in, token_in) {
-    var email = document.getElementById('Password').value;
+    var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
     var username = document.getElementById('Username').value;
     var firstName = document.getElementById('FirstName').value;
     var lastName = document.getElementById('LastName').value;
-    var male = document.getElementById('Male').value;
-    var female = document.getElementById('Female').value;
-    if (male == "1"){
+    var male = document.getElementById('Male').checked;
+    var female = document.getElementById('Female').checked;
+    if (male){
         var sex = true;
-    } else if (female == "1"){
+    } else if (female){
         var sex = false;
     } else {
         alert("Se debe de elegir un sexo");
     }
-    var birthDate = document.getElementById('BirthDate').value;
+    var date = document.getElementById('BirthDate').value;
+    alert(date);
+    var birthDate = new Date(date);
+    alert(birthDate);
     var city = document.getElementById('City').value;
     var height = document.getElementById('Height').value;
     var weight = document.getElementById('Weight').value;
@@ -95,10 +98,10 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
             "sex": sex_in,
             "birthDate": birthDate_in,
             "city": city_in,
-            "height": height_in,
+            //"height": height_in,
            // "weight": weight_in,
-            "smoker": smoker_in,
-            "alcohol": alcohol_in,
+            //"smoker": smoker_in,
+           // "alcohol": alcohol_in,
             "about": about_in,
             "telephone": telephone_in,
             "address": address_in
