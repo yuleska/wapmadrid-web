@@ -33,6 +33,34 @@ function registerWalker(id_in, token_in) {
     } else registerWalker_connect(id_in, token_in, username, password, route, name, image, address, telephone, openingHours);
 }
 
+
+function readCMS_connect(id_in, token_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRegister = urlBase + "/api/cms/read/" + id_in
+    $.ajax({
+        url: urlRegister,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                $('#CMSname').append(r.responseJSON.name);               
+            } else
+                alert("Error al leer los cambios");
+                return null;
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}
+
 function registerWalker_connect(id_in, token_in, username_in, password_in, route_in, name_in, image_in, address_in, telephone_in, openingHours_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/walker/register/" + id_in
@@ -60,33 +88,6 @@ function registerWalker_connect(id_in, token_in, username_in, password_in, route
                 window.location.href = "cms-list.html"
             } else
                 alert("Error al guardar los cambios");
-        },
-        onerror: function(e, val) {
-            alert("No se ha podido realizar la peticion");
-        }
-    });
-}
-
-function readCMS_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRegister = urlBase + "/api/cms/read/" + id_in
-    $.ajax({
-        url: urlRegister,
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json",
-        type: "POST",
-        crossDomain: true,
-        data: {
-            "token": token_in
-        },
-        complete: function(r) {
-            console.log(r);
-            var json = JSON.parse(r.responseText);
-            if (json.error == "0") {
-                $('#CMSname').append(r.responseJSON.name);               
-            } else
-                alert("Error al leer los cambios");
-                return null;
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
