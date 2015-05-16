@@ -66,8 +66,8 @@ function registerWalker(id_in, token_in) {
     var city = document.getElementById('City').value;
     var height = document.getElementById('Height').value;
     var weight = document.getElementById('Weight').value;
-    var smoker = document.getElementById('Smoker').value;
-    var alcohol = document.getElementById('Alcohol').value;
+    var smoker = document.getElementById('Smoker').selectedIndex;
+    var alcohol = document.getElementById('Alcohol').selectedIndex;
     var about = document.getElementById('About').value;
     var telephone = document.getElementById('Telephone').value;
     var address = document.getElementById('Address').value;
@@ -101,7 +101,7 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
             //"height": height_in,
            // "weight": weight_in,
             //"smoker": smoker_in,
-           // "alcohol": alcohol_in,
+            //"alcohol": alcohol_in,
             "about": about_in,
             "telephone": telephone_in,
             "address": address_in
