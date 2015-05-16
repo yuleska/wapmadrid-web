@@ -23,15 +23,16 @@
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    <script type="text/javascript" src="js/user-profile.js"></script>
 </head>
 
 <body>
     <script>
     checkCredentials();
     window.onload = function() {
-        var username_admin = getCookie("username");
-        $('#Username').val(username_admin);
-        $('#usernameTitle').append(username_admin);
+        var id_in = getCookie("id");
+        var token_in = getCookie("token");
+        readCMS_connect(id_in,token_in);
     };
     </script>
     <div>
@@ -131,7 +132,7 @@
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>Perfil CMS: Nombre CMS</h2>
+                                        <h2 id="CMSname1">Perfil CMS: </h2>
                                         <div class="row mtl">
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -142,15 +143,15 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Nombre de usuario</td>
-                                                            <td>Usuario CMS</td>
+                                                            <td id="Username"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Correo electrónico</td>
-                                                            <td>nombre@ejemplo.com</td>
+                                                            <td id="Email1">nombre@ejemplo.com</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Ruta del centro</td>
-                                                            <td><span class="label label-orange">Ruta asignada</span></td>
+                                                            <td><span class="label label-orange" id="Route">Ruta asignada</span></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -168,7 +169,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="nombre CMS" class="form-control" />
+                                                                            <input type="text" placeholder="nombre CMS" id="CMSname2" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -178,7 +179,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="email" placeholder="nombre@ejemplo.com" class="form-control" />
+                                                                            <input type="email" id="Email2" placeholder="nombre@ejemplo.com" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -188,7 +189,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="teléfono" class="form-control" />
+                                                                            <input type="text" id="Telephone" placeholder="teléfono" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -198,7 +199,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="horario" class="form-control" />
+                                                                            <input type="text" id="OpeningHours" placeholder="horario" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -208,7 +209,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <textarea rows="3" class="form-control"></textarea>
+                                                                            <textarea rows="3" id="Address" class="form-control"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
