@@ -177,21 +177,21 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Correo electrónico</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-9"><input type="email" placeholder="nombre@ejemplo.com" class="form-control"/></div>
+                                                                    <div class="col-xs-9"><input type="email" id="Email" placeholder="nombre@ejemplo.com" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Nombre de usuario</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" placeholder="nombre de usuario" class="form-control"/></div>
+                                                                    <div class="col-xs-9"><input type="text" id="Username" placeholder="nombre de usuario" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Contraseña</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input type="password" placeholder="contraseña" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input type="password" id="Password" placeholder="contraseña" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -207,14 +207,14 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Nombre</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" placeholder="nombre" class="form-control"/></div>
+                                                                    <div class="col-xs-9"><input type="text" id="FirstName" placeholder="nombre" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Apellido</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" placeholder="apellido" class="form-control"/></div>
+                                                                    <div class="col-xs-9"><input type="text" id="lastName" placeholder="apellido" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -222,8 +222,8 @@
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
                                                                     <div class="col-xs-9">
-                                                                        <div class="radio"><label class="radio-inline"><input type="radio" value="0" name="sex" checked="checked"/>&nbsp;
-                                                                            Hombre</label><label class="radio-inline"><input type="radio" value="1" name="sex"/>&nbsp;
+                                                                        <div class="radio"><label class="radio-inline"><input type="radio" id="Male"/>&nbsp;
+                                                                            Hombre</label><label class="radio-inline"><input type="radio" id="Female" />&nbsp;
                                                                             Mujer</label>
                                                                         </div>
                                                                     </div>
@@ -233,28 +233,35 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Fecha de nacimiento</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input id="datepicker-normal" type="text" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input id="datepicker-normal" type="text" id="BirthDate" class="form-control"/></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                         <div class="form-group"><label class="col-sm-3 control-label">Ciudad</label>
+                                                            <div class="col-sm-9 controls">
+                                                                <div class="row">
+                                                                    <div class="col-xs-9"><input type="text" id="City" placeholder="ciudad" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Altura (m)</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" placeholder="altura" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input type="text" id="Height" placeholder="altura" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Peso (Kg)</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" placeholder="peso" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input type="text" id="Weight" placeholder="peso" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Fumador</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><select class="form-control">
+                                                                    <div class="col-xs-4"><select class="form-control" id="Smoker">
                                                                         <option>Si</option>
                                                                         <option>No</option>
                                                                     </select></div>
@@ -264,11 +271,18 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Consumo de alcohol</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><select class="form-control">
+                                                                    <div class="col-xs-4"><select class="form-control" id="Alcohol">
                                                                         <option>Con frecuencia</option>
                                                                         <option>Moderadamente</option>
                                                                         <option>No</option>
                                                                     </select></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group"><label class="col-sm-3 control-label">Sobre tí</label>
+                                                            <div class="col-sm-9 controls">
+                                                                <div class="row">
+                                                                    <div class="col-xs-9"><textarea rows="3" id="About" class="form-control"></textarea></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -277,14 +291,14 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Teléfono</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" placeholder="teléfono" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input type="text" id="Telephone" placeholder="teléfono" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group"><label class="col-sm-3 control-label">Dirección</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-9"><textarea rows="3" class="form-control"></textarea></div>
+                                                                    <div class="col-xs-9"><textarea rows="3" id="Address" class="form-control"></textarea></div>
                                                                 </div>
                                                             </div>
                                                         </div>

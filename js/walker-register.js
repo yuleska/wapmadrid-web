@@ -17,23 +17,6 @@ function checkCredentials() {
     }
 }
 
-function registerWalker(id_in, token_in) {
-    var password = document.getElementById('Password').value;
-    var username = document.getElementById('Username').value;
-    var route = document.getElementById('Route').value;
-    var name = document.getElementById('Name').value;
-    var image = document.getElementById('Image').value;
-    var address = document.getElementById('Address').value;
-    var telephone = document.getElementById('Telephone').value;
-    var openingHours = document.getElementById('OpeningHours').value;
-    if (username == "") {
-        alert("Se debe introcucir un nombre de usuario");
-    } else if (password == "") {
-        alert("Se debe introducir una contraseña");
-    } else registerWalker_connect(id_in, token_in, username, password, route, name, image, address, telephone, openingHours);
-}
-
-
 function readCMS_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/read/" + id_in
@@ -61,7 +44,39 @@ function readCMS_connect(id_in, token_in) {
     });
 }
 
-function registerWalker_connect(id_in, token_in, username_in, password_in, route_in, name_in, image_in, address_in, telephone_in, openingHours_in) {
+function registerWalker(id_in, token_in) {
+    var email = document.getElementById('Password').value;
+    var password = document.getElementById('Password').value;
+    var username = document.getElementById('Username').value;
+    var firstName = document.getElementById('FirstName').value;
+    var lastName = document.getElementById('LastName').value;
+    var male = document.getElementById('Male').value;
+    var female = document.getElementById('Female').value;
+    if (male == "1"){
+        var sex = true;
+    } else if (female == "1"){
+        var sex = false;
+    } else {
+        alert("Se debe de elegir un sexo");
+    }
+    var birthDate = document.getElementById('BirthDate').value;
+    var city = document.getElementById('City').value;
+    var height = document.getElementById('Height').value;
+    var weight = document.getElementById('Weight').value;
+    var smoker = document.getElementById('Smoker').value;
+    var alcohol = document.getElementById('Alcohol').value;
+    var about = document.getElementById('About').value;
+    var telephone = document.getElementById('Telephone').value;
+    var address = document.getElementById('Address').value;
+    if (username == "") {
+        alert("Se debe introcucir un nombre de usuario");
+    } else if (password == "") {
+        alert("Se debe introducir una contraseña");
+    } else registerWalker_connect(id_in, token_in, email, username, password, firstName, lastName, sex, birthDate, city, height, weight, smoker, alcohol, about, telephone, address);
+}
+
+
+function registerWalker_connect(id_in, token_in, email_in, username_in, password_in, firstName_in, lastName_in, sex_in, birthDate_in, city_in, height_in, weight_in, smoker_in, alcohol_in, about_in, telephone_in, address_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/walker/register/" + id_in
     $.ajax({
@@ -72,20 +87,27 @@ function registerWalker_connect(id_in, token_in, username_in, password_in, route
         crossDomain: true,
         data: {
             "token": token_in,
+            "email": email_in,
             "username": username_in,
             "password": password_in,
-            //"route": route_in,
-            "name": name_in,
-           //"image": image_in,
-            "address": address_in,
+            "firstName": firstName_in,
+            "lastName": lastName_in,
+            "sex": sex_in,
+            "birthDate": birthDate_in,
+            "city": city_in,
+            "height": height_in,
+           // "weight": weight_in,
+            "smoker": smoker_in,
+            "alcohol": alcohol_in,
+            "about": about_in,
             "telephone": telephone_in,
-            "openingHours": openingHours_in
+            "address": address_in
         },
         complete: function(r) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                window.location.href = "cms-list.html"
+                window.location.href = "home.html"
             } else
                 alert("Error al guardar los cambios");
         },
