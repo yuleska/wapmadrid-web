@@ -62,9 +62,9 @@ function readWappies_connect(id_in, token_in) {
             if (json.error == "0") {
                 for (i in r.responseJSON.walkers) {
                     if (i%2 == 0){
-                        $('#listWalkers').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
+                        $('#listWalkers').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" id="btn_'+r.responseJSON.walkers[i].walkerID+'" class="btn btn-orange">Editar</a></div></div></td></tr>');
                     }else{
-                        $('#listWalkers').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
+                        $('#listWalkers').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.walkers[i].walkerID+'</p></div><div class="col-md-2"><a href="walker-edit.html" id="btn_'+r.responseJSON.walkers[i].walkerID+'" class="btn btn-orange">Editar</a></div></div></td></tr>');
 
                     }
                     console.log(r.responseJSON.walkers[i].walkerID);
