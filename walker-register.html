@@ -22,8 +22,18 @@
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    <script type="text/javascript" src="js/walker-register.js"></script>
 </head>
 <body>
+<script>
+    checkCredentials();
+    window.onload = function() {
+        var id_in = getCookie("id");
+        var token_in = getCookie("token");
+        readCMS_connect(id_in,token_in);
+    };
+</script>
+        
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -46,7 +56,7 @@
                     <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-violet">7</span></a>
                         
                     </li>
-                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Centro Madrid Salud</span>&nbsp;<span class="caret"></span></a>
+                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs" id="CMSname"></span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
                             <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil CMS</a></li>
                             <li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
@@ -279,7 +289,7 @@
                                                             </div>
                                                         </div>
                                                         <hr/>
-                                                        <button type="submit" class="btn btn-orange btn-block">Crear Wappy</button>
+                                                        <button onclick="registerWalker(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear Wappy</button>
                                                     </form>
                                                 </div>
                                                 <!-- END TAB-REGISTER -->
