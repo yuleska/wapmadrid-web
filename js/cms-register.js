@@ -22,7 +22,7 @@ function registerCMS(id_in, token_in) {
     var username = document.getElementById('Username').value;
     var route = document.getElementById('Route').value;
     var name = document.getElementById('Name').value;
-    var image = document.getElementById('Image').value;
+    //var image = "dhkjsahdksa";
     var address = document.getElementById('Address').value;
     var telephone = document.getElementById('Telephone').value;
     var openingHours = document.getElementById('OpeningHours').value;
@@ -30,10 +30,10 @@ function registerCMS(id_in, token_in) {
         alert("Se debe introcucir un nombre de usuario");
     } else if (password == "") {
         alert("Se debe introducir una contraseña");
-    } else registerCMS_connect(id_in, token_in, username, password, route, name, image, address, telephone, openingHours);
+    } else registerCMS_connect(id_in, token_in, username, password, route, name,/* image, */address, telephone, openingHours);
 }
 
-function registerCMS_connect(id_in, token_in, username_in, password_in, route_in, name_in, image_in, address_in, telephone_in, openingHours_in) {
+function registerCMS_connect(id_in, token_in, username_in, password_in, route_in, name_in,address_in, telephone_in, openingHours_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/admin/cms/register/" + id_in
     $.ajax({
