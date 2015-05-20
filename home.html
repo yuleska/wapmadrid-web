@@ -32,7 +32,7 @@
     window.onload = function() {
         var id_in = getCookie("id");
         var token_in = getCookie("token");
-        readCMS_connect(id_in,token_in);
+        readHome_connect(id_in,token_in);
     };
     </script>
     <div>
@@ -63,7 +63,7 @@
                                 <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
                                 <li><a href="#"><i class="fa fa-envelope"></i>Mensajes</a></li>-->
                                 <li class="divider"></li>
-                                <li><a onclick="logout_connect((getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                                <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -17,9 +17,9 @@ function checkCredentials() {
     }
 }
 
-function readCMS_connect(id_in, token_in) {
+function readHome_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRegister = urlBase + "/api/cms/read/" + id_in
+    var urlRegister = urlBase + "/api/cms/home/" + id_in
     $.ajax({
         url: urlRegister,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -33,7 +33,7 @@ function readCMS_connect(id_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                $('#CMSname').append(r.responseJSON.name);               
+                $('#CMSname').append(r.responseJSON.name);             
             } else
                 alert("Error al leer los cambios");
                 return null;

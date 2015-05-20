@@ -110,7 +110,8 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                window.location.href = "home.html"
+                window.location.href = "home.html";
+                event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
         },
