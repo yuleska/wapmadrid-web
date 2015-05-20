@@ -45,6 +45,7 @@ function updatePassword_connect(username_in, password_in, id_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 window.location.href = "cms-register.html";
+                event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
         },

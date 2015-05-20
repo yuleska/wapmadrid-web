@@ -57,7 +57,8 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                window.location.href = "cms-list.html"
+                window.location.href = "cms-list.html";
+                event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
         },
