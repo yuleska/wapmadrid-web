@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>wapmadrid | lista wappies</title>
+    <title>wapmadrid | crear evento</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
     <link type="text/css" rel="stylesheet" href="styles/jplist-custom.css">
-    <script type="text/javascript" src="js/walker-list.js"></script>
+    <script type="text/javascript" src="js/event-new.js"></script>
 </head>
 <body>
 <script>
@@ -32,7 +32,6 @@
         var id_in = getCookie("id");
         var token_in = getCookie("token");
         readCMS_connect(id_in,token_in);
-        readWappies_connect(id_in,token_in);
     };
 </script>
     <div>
@@ -63,7 +62,7 @@
                             <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
                             <li><a href="#"><i class="fa fa-envelope"></i>Mensajes</a></li>-->
                             <li class="divider"></li>
-                            <li><a href="index.html"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                            <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -88,7 +87,7 @@
                        
                     </li>
 
-                    <li class="active"><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
+                    <li><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de Wappies</span></a>
                           
@@ -111,12 +110,12 @@
                     </i><span class="menu-title">Lista de grupos</span></a></li>
                         </ul>
                         </li>
-                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
+                        <li class="dropdown active"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Eventos </span><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"></a></li>
-                            <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
+                            <li class="active"><a href="#"><i class="fa fa-pencil-square-o fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear evento</span></a></li>
                             <li><a href="#"><i class="fa fa-th-list fa-fw">
@@ -133,13 +132,13 @@
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                     <div class="page-header pull-left">
-                        <div class="page-title">
-                            Lista de Wappies</div>
+                        <div class="page-title">Crear Evento</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a href="home.html">wapmadrid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="hidden"><a href="#">Lista de Wappies</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Lista de Wappies</li>
+                        <li class="hidden"><a href="#">Crear Evento</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="active">Eventos<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="active">Crear Evento</li>
                     </ol>
                     <div class="clearfix">
                     </div>
@@ -165,55 +164,45 @@
                     <div class="col-lg-12">
                         <div class="panel">
                             <div class="panel-body">
-                                <div class="box text-shadow">
-                                        <table class="demo-tbl" id="listWalkers">
-                                   </table>
+
+                            <form action="#" class="form-horizontal">
+                                <h3>Datos del evento</h3>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Nombre</label>
+                                    <div class="col-sm-9 controls">
+                                        <div class="row">
+                                            <div class="col-xs-9">
+                                                <input type="text" id="NameEvent" placeholder="nombre" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--<div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Buscador</div>
-                                    <div class="jplist-panel box panel-top">
-                                        <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Resetear<i class="fa fa-share mls"></i></button>
-                                        <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 por página</span></li>
-                                                <li><span data-number="5"> 5 por página</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 por página</span></li>
-                                                <li><span data-number="all"> ver todos</span></li>
-                                            </ul>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Fecha</label>
+                                    <div class="col-sm-9 controls">
+                                        <div class="row">
+                                            <div class="col-xs-4 "><input type="date" id="DateEvent" /></div>
+                                            <label class="col-sm-2 control-label">Hora</label>
+                                            <div class="col-xs-4 "><input type="time" id="TimeEvent" /></div>
                                         </div>
-                                        <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-path="default">Ordenar por</span></li>
-                                                <li><span data-path=".title" data-order="asc" data-type="text">Nombre A-Z</span></li>
-                                                <li><span data-path=".title" data-order="desc" data-type="text">Nombre Z-A</span></li>
-                                            </ul>
+                                    </div>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Descripción</label>
+                                    <div class="col-sm-9 controls">
+                                        <div class="row">
+                                            <div class="col-xs-9">
+                                                <textarea rows="3" id="Description" class="form-control"></textarea>
+                                            </div>
                                         </div>
-                                        <div class="text-filter-box">
-                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input data-path=".title" type="text" value="" placeholder="Nombre Wappy" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" class="form-control"/></div>
-                                        </div>
-                                        
-                                        <div data-type="Página {current} de {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
                                     </div>
-                                    <div class="box text-shadow">
-                                        <table class="demo-tbl">
-                                            <tr class="tbl-item" style="background-color:#dbdbdb">
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">Alvaro WAPPY</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td>
-                                            </tr>
-                                            <tr class="tbl-item">
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">Ismael WAPPY</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td>
-                                            </tr>
-                                            <tr class="tbl-item" style="background-color:#dbdbdb">
-                                                <td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">Yuleska WAPPY</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <!--<div class="box jplist-no-results text-shadow align-center"><p>No se encontro resultados</p></div>
-                                    <div class="jplist-panel box panel-bottom">
-                                        <div data-type="{start} - {end} de {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
-                                    </div>
-                                </div>-->
+                                </div>
+                                <hr/>
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <button onclick="newEvent(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear evento</button>
+                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>

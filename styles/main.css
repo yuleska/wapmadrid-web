@@ -3,6 +3,10 @@
   background-color: transparent;
 }
 
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  background-color: #710096;
+}
+
 .timeline {
   margin: 0 0 30px 0;
   padding: 0;
@@ -919,8 +923,12 @@ hr {
     
 }
 
+.navbar-static-side ul li.active{
+  background: #f15900; 
+}
+
 .navbar-static-side ul li.active a {
-background: #f15900; /* Old browsers */
+/* Old browsers */
   transition: 0.2s all ease-in-out;
   outline: none;
   color:#FFF;
