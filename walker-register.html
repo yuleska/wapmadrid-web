@@ -62,7 +62,7 @@
                             <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
                             <li><a href="#"><i class="fa fa-envelope"></i>Mensajes</a></li>-->
                             <li class="divider"></li>
-                            <li><a href="index.html"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                            <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -97,17 +97,32 @@
                     </i><span class="menu-title">Rutas</span></a>
                        
                     </li>
-                    <li><a href=""><i class="fa fa-edit fa-fw">
+                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-violet"></div>
-                    </i><span class="menu-title">Grupos</span></a>
-                      
-                    </li>
-
-                    <li><a href=""><i class="fa fa-th-list fa-fw">
+                    </i><span class="menu-title">Grupos </span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-blue"></div>
-                    </i><span class="menu-title">Eventos</span></a>
-                          
-                    </li>                    
+                    </i><span class="menu-title">Crear grupo</span></a></li>
+                            <li><a href="#"><i class="fa fa-th-list fa-fw">
+                        <div class="icon-bg bg-blue"></div>
+                    </i><span class="menu-title">Lista de grupos</span></a></li>
+                        </ul>
+                        </li>
+                        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
+                        <div class="icon-bg bg-violet"></div>
+                    </i><span class="menu-title">Eventos </span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"><i class="fa fa-pencil-square-o fa-fw">
+                        <div class="icon-bg bg-blue"></div>
+                    </i><span class="menu-title">Crear evento</span></a></li>
+                            <li><a href="#"><i class="fa fa-th-list fa-fw">
+                        <div class="icon-bg bg-blue"></div>
+                    </i><span class="menu-title">Lista de eventos</span></a></li>
+                        </ul>
+                        </li>                   
                 </ul>
             </div>
         </nav>
@@ -167,9 +182,6 @@
                                         <div class="col-md-9">
                                             <ul class="nav nav-tabs">
                                                 <li class="active"><a href="#tab-register" data-toggle="tab">Registro</a></li>
-                                                <li><a href="#tab-routes-groups" data-toggle="tab">Rutas y grupos</a></li>
-                                                <li><a href="#tab-diet" data-toggle="tab">Test dieta mediterránea</a></li>
-                                                <li><a href="#tab-exercise" data-toggle="tab">Test actividad física</a></li>
                                             </ul>
                                             <div id="generalTabContent" class="tab-content">
                                                 <div id="tab-register" class="tab-pane fade in active">
@@ -198,7 +210,7 @@
                                                         <div class="form-group"><label class="col-sm-3 control-label">Confirmar contraseña</label>
                                                             <div class="col-sm-9 controls">
                                                                 <div class="row">
-                                                                    <div class="col-xs-4"><input type="password" placeholder="contraseña" class="form-control"/></div>
+                                                                    <div class="col-xs-4"><input type="password" id="RePassword" placeholder="contraseña" class="form-control"/></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -307,519 +319,6 @@
                                                     </form>
                                                 </div>
                                                 <!-- END TAB-REGISTER -->
-                                                <div id="tab-routes-groups" class="tab-pane fade in">
-                                                       <div class="row">
-                                                            <div class="col-md-12">
-                                                                
-                                                                    <div class="panel-body">
-                                                                        <div class="panel-group" id="accordion">
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Arganzuela</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                    <h3>Ruta</h3>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/Arganzuela.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap1" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared1" name="check" />
-                                                                                            <span for="squared1" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr>
-                                                                                        <h3>Grupos</h3>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">Ciudad lineal</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                     <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/CiudadLineal.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap2" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared2" name="check" />
-                                                                                            <span for="squared2" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>  
-                                                                                        <hr> 
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">NS - EO</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/NS-EO.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap3" style="width:325px;height:326px;"></div>
-                                                                                            </div>
-                                                                                        </div>   
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared3" name="check" />
-                                                                                            <span for="squared3" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class="collapsed">San blas</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseFour" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/SanBlas.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap4" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div> 
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared4" name="check" />
-                                                                                            <span for="squared4" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr>  
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" class="collapsed">Usera</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseFive" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                       <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/Usera.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap5" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div> 
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared5" name="check" />
-                                                                                            <span for="squared5" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>  
-                                                                                        <hr>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix" class="collapsed">Vallecas</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseSix" class="panel-collapse collapse" style="height: 0px;">
-                                                                                    <div class="panel-body">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/Vallecas.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap6" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div>  
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared6" name="check" />
-                                                                                            <span for="squared6" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr> 
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" class="">Vicálvaro</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseSeven" class="panel-collapse collapse" style="height: auto;">
-                                                                                    <div class="panel-body">
-                                                                                       <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/Vicalvaro.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap7" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div>  
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared7" name="check" />
-                                                                                            <span for="squared7" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr> 
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="panel panel-default">
-                                                                                <div class="panel-heading">
-                                                                                    <h4 class="panel-title">
-                                                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight" class="">Villaverde</a>
-                                                                                    </h4>
-                                                                                </div>
-                                                                                <div id="collapseEight" class="panel-collapse collapse" style="height: auto;">
-                                                                                    <div class="panel-body">
-                                                                                       <div class="row">
-                                                                                            <div class="col-md-6">
-                                                                                                <img src="images/gallery/Villaverde.png" class="img-responsive">
-                                                                                            </div>
-                                                                                            <div class="col-md-6">
-                                                                                                <div id="googleMap8" style="width:325px;height:283px;"></div>
-                                                                                            </div>
-                                                                                        </div>  
-                                                                                         <br>
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4 col-md-offset-4"><input type="checkbox" value="None" id="squared8" name="check" />
-                                                                                            <span for="squared8" class="label label-orange" style="font-size:18px">Seleccionar ruta</span></div>
-                                                                                            
-                                                                                        </div>
-                                                                                        <hr> 
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                <!-- END TAB-ROUTES-GROUPS -->
-                                                <div id="tab-diet" class="tab-pane fade in">
-                                                    <form action="#" class="form-horizontal">
-                                                        <h4 style="color:#777">¿Usa usted el aceite de oliva como principal grasa para cocinar?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Si</option>
-                                                                        <option>No</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h4 style="color:#777">¿Cuánto aceite de oliva consume en total al día (incluyendo el usado para freír, comidas fuera de casa, ensaladas, etc...)?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Tres o menos cucharadas</option>
-                                                                        <option>Cuatro o más cucharadas</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                         <h4 style="color:#777">¿Cuántas verduras y hortalizas consume al día? (1 ración 200g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Una o menos</option>
-                                                                        <option>Dos o más (alimentos una de ellas en ensalada o crudas)</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">¿Cuántas piezas de fruta consume al día? (Incluyendo zumo natural)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Dos o menos al día</option>
-                                                                        <option>Tres o más al día</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">¿Cuántas raciones de carnes rojas, hamburguesas, salchichas o embutidos consume al día? (1 ración 100/150g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de uno al día</option>
-                                                                        <option>Uno o más al día</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">¿Cuántas raciones de mantequilla, margarina o nata consume al día? (Porción individual 12g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de una al día</option>
-                                                                        <option>Una o más al día</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">¿Cuántas bebidas carbonadas y/o azucaradas (refrescos, colas, bitter) consume al día?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de una al día</option>
-                                                                        <option>Una o más al día</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                       <h4 style="color:#777">¿Bebe usted vino? ¿Cuánto consume a la semana?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Seis o menos vasos a la semana</option>
-                                                                        <option>Siete o más vasos a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div> 
-                                                         <hr/>
-                                                       <h4 style="color:#777">¿Cuántas raciones de legumbres consume a la semana? (1 plato ración de 150g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Dos o menos a la semana</option>
-                                                                        <option>Tres o más a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>    
-                                                        <hr/>
-                                                       <h4 style="color:#777">¿Cuántas raciones de  pescado-mariscos consume a la semana? (1 ración de pescado 150g, 1 ración de marisco 200g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Dos o menos a la semana</option>
-                                                                        <option>Tres o más a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>    
-                                                        <hr/>
-                                                       <h4 style="color:#777">¿Cuántas veces consume repostería comercial (no casera) como galletas, flanes, dulce o pasteles a la semana?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de dos a la semana</option>
-                                                                        <option>Dos o más a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div> 
-                                                         <hr/>
-                                                       <h4 style="color:#777">¿Cuántas veces consume frutos secos a la semana? (1 ración 30g)</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de tres a la semana</option>
-                                                                        <option>Tres o más a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>    
-                                                        <hr/>
-                                                       <h4 style="color:#777">¿Consume usted preferentemente carne de pollo, pavo o conejo en vez de ternera, cerdo, hamburguesas o salchichas?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Si</option>
-                                                                        <option>No</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>   
-                                                        <hr/>
-                                                       <h4 style="color:#777">¿Cuántas veces a la semana consume los vegetales cocinados, la pasta, arroz u otros platos aderezados con salsa de tomate, ajo, cebolla o puerro elaborado a fuego lento con aceite de oliva (sofrito)?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Menos de dos a la semana</option>
-                                                                        <option>Dos o más a la semana</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>       
-                                                        <button type="submit" class="btn btn-orange btn-block">Guardar test</button>
-                                                    </form>
-                                                </div>
-                                                 <!-- END TAB-DIET -->
-                                                 <div id="tab-exercise" class="tab-pane fade in">
-                                                    <form action="#" class="form-horizontal">
-                                                        <h4 style="color:#777;font-weight:bold">Piense acerca de todas aquellas actividades vigorosas que usted realizó en los últimos 7 días. Actividades vigorosas son las que requieren un esfuerzo físico fuerte y le hacen respirar mucho más fuerte que lo normal. Piense solamente en esas actividades que usted hizo por lo menos 10 minutos continuos.</h4>
-                                                        <hr/>
-                                                        <h4 style="color:#777">Durante los últimos 7 días, ¿Cuántos días realizó usted actividades físicas vigorosas como levantar objetos pesados, excavar, aeróbicos, o pedalear rápido en bicicleta?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Ningún día</option>
-                                                                        <option>Un día</option>
-                                                                        <option>Dos días</option>
-                                                                        <option>Tres días</option>
-                                                                        <option>Cuatro días</option>
-                                                                        <option>Cinco días</option>
-                                                                        <option>Seis días</option>
-                                                                        <option>Todos los días</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h4 style="color:#777">¿Cuánto tiempo en total usualmente le tomó realizar actividades físicas vigorosas en uno de esos días que las realizó?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4"><input type="text" placeholder="horas por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="text" placeholder="minutos por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="checkbox" value="None" name="check" />
-                                                                    <label>No sabe/No está seguro(a)</label></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h4 style="color:#777;font-weight:bold">Piense acerca de todas aquellas actividades moderadas que usted realizo en los últimos 7 días Actividades moderadas son aquellas que requieren un esfuerzo físico moderado y le hace respirar algo más fuerte que lo normal. Piense solamente en esas actividades que usted hizo por lo menos 10 minutos continuos.</h4>
-                                                        <hr/>
-                                                         <h4 style="color:#777">Durante los últimos 7 días, ¿Cuántos días hizo usted actividades físicas moderadas tal como cargar objetos livianos, pedalear en bicicleta a paso regular, o jugar dobles de tenis? No incluya caminatas.</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Ningún día</option>
-                                                                        <option>Un día</option>
-                                                                        <option>Dos días</option>
-                                                                        <option>Tres días</option>
-                                                                        <option>Cuatro días</option>
-                                                                        <option>Cinco días</option>
-                                                                        <option>Seis días</option>
-                                                                        <option>Todos los días</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">Usualmente, ¿Cuánto tiempo dedica usted en uno de esos días haciendo actividades físicas moderadas?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4"><input type="text" placeholder="horas por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="text" placeholder="minutos por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="checkbox" value="None" name="check" />
-                                                                    <label>No sabe/No está seguro(a)</label></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h4 style="color:#777;font-weight:bold">Piense acerca del tiempo que usted dedicó a caminar en los últimos 7 días. Esto incluye trabajo en la casa, caminatas para ir de un sitio a otro, o cualquier otra caminata que usted hizo únicamente por recreación, deporte, ejercicio, o placer.</h4>
-                                                        <hr/>
-
-                                                          <h4 style="color:#777">Durante los últimos 7 días, ¿Cuántos días caminó usted por al menos 10 minutos continuos?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4 col-md-offset-4"><select class="form-control">
-                                                                        <option>Ningún día</option>
-                                                                        <option>Un día</option>
-                                                                        <option>Dos días</option>
-                                                                        <option>Tres días</option>
-                                                                        <option>Cuatro días</option>
-                                                                        <option>Cinco días</option>
-                                                                        <option>Seis días</option>
-                                                                        <option>Todos los días</option>
-                                                                    </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                          <h4 style="color:#777">Usualmente, ¿Cuánto tiempo gastó usted en uno de esos días caminando?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                               <div class="row">
-                                                                    <div class="col-md-4"><input type="text" placeholder="horas por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="text" placeholder="minutos por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="checkbox" value="None" name="check" />
-                                                                    <label>No sabe/No está seguro(a)</label></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <hr/>
-                                                         <h4 style="color:#777;font-weight:bold">La última pregunta se refiere al tiempo que usted permanenció sentado(a) en la semana en los últimos 7 días. Incluya el tiempo sentado(a) en el trabajo, la casa, estudiando, y en su tiempo libre. Esto puede incluír tiempo sentado(a) en un escritorio, visitando amigos(as), leyendo o permanecer sentado(a) o acostado(a) mirando television.</h4>
-                                                        <hr/>
-                                                          <h4 style="color:#777">Durante los últimos 7 días, ¿Cuánto tiempo permaneció sentado(a) en un día en la semana?</h4>
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 controls">
-                                                                <div class="row">
-                                                                    <div class="col-md-4"><input type="text" placeholder="horas por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="text" placeholder="minutos por día" class="form-control"/></div>
-                                                                    <div class="col-md-4"><input type="checkbox" value="None" name="check" />
-                                                                    <label>No sabe/No está seguro(a)</label></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-orange btn-block">Guardar test</button>
-                                                    </form>       
-                                                </div>
-                                                 <!-- END TAB-EXERCISE -->
                                             </div>
                                             
                                

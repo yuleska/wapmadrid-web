@@ -24,9 +24,18 @@
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
     <link type="text/css" rel="stylesheet" href="styles/jplist-custom.css">
+    <script type="text/javascript" src="js/cms-list.js"></script>
 </head>
 
 <body>
+<script>
+    checkCredentials();
+    window.onload = function() {
+        var id_in = getCookie("id_admin");
+        var token_in = getCookie("token_admin");
+        readallCMS_connect(id_in,token_in);
+    };
+</script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>

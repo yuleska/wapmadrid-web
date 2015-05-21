@@ -47,6 +47,7 @@ function readCMS_connect(id_in, token_in) {
 function registerWalker(id_in, token_in) {
     var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
+    var rePassword = document.getElementById('RePassword').value;
     var username = document.getElementById('Username').value;
     var firstName = document.getElementById('FirstName').value;
     var lastName = document.getElementById('LastName').value;
@@ -60,9 +61,7 @@ function registerWalker(id_in, token_in) {
         alert("Se debe de elegir un sexo");
     }
     var date = document.getElementById('BirthDate').value;
-    alert(date);
     var birthDate = new Date(date);
-    alert(birthDate);
     var city = document.getElementById('City').value;
     var height = document.getElementById('Height').value;
     var weight = document.getElementById('Weight').value;
@@ -75,6 +74,8 @@ function registerWalker(id_in, token_in) {
         alert("Se debe introcucir un nombre de usuario");
     } else if (password == "") {
         alert("Se debe introducir una contraseña");
+    } else if (password != rePassword){
+        alert("Se debe introducir la misma contraseña");
     } else registerWalker_connect(id_in, token_in, email, username, password, firstName, lastName, sex, birthDate, city, height, weight, smoker, alcohol, about, telephone, address);
 }
 
@@ -114,6 +115,35 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
                 event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}
+
+function logout_connect(id_in, token_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRegister = urlBase + "/api/cms/logout/" + id_in
+    $.ajax({
+        url: urlRegister,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                window.location.href = "index.html";             
+            } else
+                alert("Error al cerrar sesion");
+                return null;
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
