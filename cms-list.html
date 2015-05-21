@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu dropdown-user pull-right">
                                 <li><a href="admin-profile.html"><i class="fa fa-user"></i>Perfil Admin</a></li>
                                 <li class="divider"></li>
-                                <li><a href="index.html"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                                <li><a href="#" onclick="logout_connect(getCookie('id_admin'),getCookie('token_admin'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -114,7 +114,11 @@
                                         <div class="col-lg-12">
                                             <div class="panel">
                                                 <div class="panel-body">
-                                                    <div id="grid-layout-table-1" class="box jplist">
+                                                <div class="box text-shadow">
+                                        <table class="demo-tbl" id="listallCMS">
+                                   </table>
+                                </div>
+                                                   <!-- <div id="grid-layout-table-1" class="box jplist">
                                                         <div class="jplist-ios-button"><i class="fa fa-sort"></i>Buscador</div>
                                                         <div class="jplist-panel box panel-top">
                                                             <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Resetear<i class="fa fa-share mls"></i></button>
@@ -144,9 +148,9 @@
                                                         <div class="box text-shadow">
                                                             <table class="demo-tbl">
                                                                 <!--<item>1</item>-->
-                                                                <tr class="tbl-item" style="background-color:#dbdbdb">
+                                                                <!--<tr class="tbl-item" style="background-color:#dbdbdb">
                                                                     <!--<img/>-->
-                                                                    <td class="">
+                                                                    <!--<td class="">
                                                                         <div class="row">
                                                                             <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
                                                                             <div class="col-md-9">
@@ -159,7 +163,7 @@
                                                                 </tr>
                                                                 <tr class="tbl-item">
                                                                     <!--<img/>-->
-                                                                    <td class="">
+                                                                   <!--<td class="">
                                                                         <div class="row">
                                                                             <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
                                                                             <div class="col-md-9">
@@ -171,7 +175,7 @@
                                                                 </tr>
                                                                 <tr class="tbl-item" style="background-color:#dbdbdb">
                                                                     <!--<img/>-->
-                                                                    <td class="">
+                                                                    <!--<td class="">
                                                                         <div class="row">
                                                                             <div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div>
                                                                             <div class="col-md-9">
@@ -190,7 +194,7 @@
                                                             <div data-type="{start} - {end} de {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
                                                             <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
                                                         </div>
-                                                    </div>
+                                                    </div>-->
                                                 </div>
                                             </div>
                                         </div>
