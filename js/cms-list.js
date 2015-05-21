@@ -34,11 +34,11 @@ function readallCMS_connect(id_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 for (i in r.responseJSON.user) {
-                    console.log(r.responseJSON.user[i].username);
+                    console.log(r.responseJSON.user[i].name);
                     if (i%2 == 0){
-                        $('#listallCMS').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.user[i].username+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
+                        $('#listallCMS').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.user[i].name+'</p></div><div class="col-md-2"><a href="walker-edit.html" class="btn btn-orange">Editar</a></div></div></td></tr>');
                     }else{
-                        $('#listallCMS').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.user[i].username+'</p></div><div class="col-md-2"><a href="walker-edit.html"  class="btn btn-orange">Editar</a></div></div></td></tr>');
+                        $('#listallCMS').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+r.responseJSON.user[i].name+'</p></div><div class="col-md-2"><a href="walker-edit.html"  class="btn btn-orange">Editar</a></div></div></td></tr>');
 
                     }
                 }            
