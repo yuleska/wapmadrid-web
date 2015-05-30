@@ -88,7 +88,10 @@ function readCMS_connect(id_in, userId_in, token_in) {
     });
 }
 
-function updateCMS(id_in, token_in) {
+function updateCMS(id_in, userId_in, token_in) {
+    console.log(token_in);
+    console.log(id_in);
+    console.log(userId_in);
     var password = document.getElementById('Password').value;
     var rePassword = document.getElementById('RePassword').value;
     var username = document.getElementById('Username1').value;
@@ -105,10 +108,10 @@ function updateCMS(id_in, token_in) {
         alert("Se debe introducir una contraseña");
     } else if (password != rePassword) {
         alert("Deben coincidir las contraseñas");
-    } else updateCMS_connect(username, password, id_in, token_in, name, route, telephone, openingHours, address);
+    } else updateCMS_connect(username, password, id_in, userId_in, token_in, name, route, telephone, openingHours, address);
 }
 
-function updateCMS_connect(username_in, password_in, id_in, token_in, name_in, route_in, telephone_in, openingHours_in, address_in) {
+function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in, name_in, route_in, telephone_in, openingHours_in, address_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlUpdate = urlBase + "/api/admin/cms/update/" + id_in
     $.ajax({
@@ -119,6 +122,7 @@ function updateCMS_connect(username_in, password_in, id_in, token_in, name_in, r
         crossDomain: true,
         data: {
             "token": token_in,
+            "userID": userId_in,
             "username": username_in,
             "password": password_in,
             "name": name_in,
@@ -163,6 +167,7 @@ function logout_connect(id_in, token_in) {
                 document.cookie = "id_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "token_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "username_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 window.location.href = "index.html";
             } else
                 alert("Error al cerrar sesion");
