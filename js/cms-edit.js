@@ -47,7 +47,7 @@ function readallRoutes_connect() {
     });
 }
 
-function readCMS_connect(id_in, token_in) {
+function readCMS_connect(id_in, userId_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlCMS = urlBase + "/api/admin/cms/read/" + id_in
     $.ajax({
@@ -57,7 +57,8 @@ function readCMS_connect(id_in, token_in) {
         type: "POST",
         crossDomain: true,
         data: {
-            "token": token_in
+            "token": token_in,
+            "userID": userId_in
         },
         complete: function(r) {
             console.log(r);

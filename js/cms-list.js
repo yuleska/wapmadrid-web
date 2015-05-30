@@ -85,7 +85,6 @@ function readallCMS_connect(id_in, token_in) {
 function readCMS_connect(id_in) {
     var long = id_in.length;
     var id = id_in.substring(4,long);
-    alert(id);
     document.cookie="userId="+id;
     window.location.href = "cms-edit.html";
 }

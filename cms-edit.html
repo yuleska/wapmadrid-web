@@ -31,6 +31,10 @@
     checkCredentials();
     window.onload = function() {
         readallRoutes_connect();
+        var id_in = getCookie("id_admin");
+        var userId = getCookie("userId");
+        var token_in = getCookie("token_admin");
+        readCMS_connect(id_in, userId, token_in);
     };
     </script>
     <div>
