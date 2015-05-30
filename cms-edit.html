@@ -23,9 +23,16 @@
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    <script type="text/javascript" src="js/cms-edit.js"></script>
 </head>
 
 <body>
+    <script>
+    checkCredentials();
+    window.onload = function() {
+        readallRoutes_connect();
+    };
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -138,7 +145,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="nombre de usuario" class="form-control" />
+                                                                            <input type="text" id="Username" placeholder="nombre de usuario" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -148,7 +155,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="password" placeholder="contraseña" class="form-control" />
+                                                                            <input type="password" id="Password" placeholder="contraseña" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -170,7 +177,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" placeholder="nombre CMS" class="form-control" />
+                                                                            <input type="text" id="Name" placeholder="nombre CMS" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -180,15 +187,8 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <select class="form-control">
-                                                                                <option selected disabled>Rutas</option>
-                                                                                <option>Con frecuencia</option>
-                                                                                <option>Moderadamente</option>
-                                                                                <option>No</option>
-                                                                                <option>Con frecuencia</option>
-                                                                                <option>Moderadamente</option>
-                                                                                <option>No</option>
-                                                                                <option>No</option>
+                                                                            <select class="form-control" id="Route">
+                                                                                <option selected disabled>Rutas
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -211,7 +211,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="text" placeholder="teléfono" class="form-control" />
+                                                                            <input type="text" id="Telephone" placeholder="teléfono" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -221,7 +221,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="text" placeholder="horario" class="form-control" />
+                                                                            <input type="text" id="OpeningHours" placeholder="horario" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -231,13 +231,13 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <textarea rows="3" class="form-control"></textarea>
+                                                                            <textarea rows="3" id="Address" class="form-control"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button type="submit" class="btn btn-orange btn-block">Guardar cambios</button>
+                                                            <button class="btn btn-orange btn-block">Guardar cambios</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->
