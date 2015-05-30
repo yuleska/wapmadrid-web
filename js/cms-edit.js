@@ -65,6 +65,19 @@ function readCMS_connect(id_in, userId_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 alert("here yuli");
+                $('#CMSname').append(r.responseJSON.user.name);
+                $('#Username').append(r.responseJSON.user.username);
+                $('#Username1').val(r.responseJSON.user.username);
+                $('#CMSname1').val(r.responseJSON.user.name);
+                var selectRoute = document.getElementById('Route');
+                for (i in selectRoute.options) {
+                    if (selectRoute.options[i].value == r.responseJSON.user.route._id){
+                        selectRoute.options[i].selected = true;
+                    }
+                }
+                $('#Telephone').val(r.responseJSON.user.telephone);
+                $('#OpeningHours').val(r.responseJSON.user.openingHours);
+                $('#Address').val(r.responseJSON.user.address);
             } else
                 alert("Error al leer el CMS");
         },
