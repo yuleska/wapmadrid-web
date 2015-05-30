@@ -34,7 +34,7 @@ function readallRoutes_connect() {
                 var selectRoute = document.getElementById('Route');
                 for (i in r.responseJSON.routes) {
                     var text = r.responseJSON.routes[i].name;
-                    var value = r.responseJSON.routes[i].id;
+                    var value = r.responseJSON.routes[i]._id;
                     selectRoute.options.add(new Option(text, value));
                 }
             } else
@@ -76,7 +76,7 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             "token": token_in,
             "username": username_in,
             "password": password_in,
-            //"route": route_in,
+            "route": route_in,
             "name": name_in,
             //"image": image_in,
             "address": address_in,
