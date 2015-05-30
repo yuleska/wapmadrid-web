@@ -17,6 +17,36 @@ function checkCredentials() {
     }
 }
 
+function readallRoutes_connect() {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRoute = urlBase + "/api/routes/all"
+    $.ajax({
+        url: urlRoute,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "GET",
+        crossDomain: true,
+        data: {},
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                var selectRoute = document.getElementById('Route');
+                for (i in r.responseJSON.routes) {
+                    var text = r.responseJSON.routes[i].name;
+                    var value = r.responseJSON.routes[i].id;
+                    selectRoute.options.add(new Option(text, value));
+                }
+            } else
+                alert("Error al leer las rutas");
+
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}
+
 function registerCMS(id_in, token_in) {
     var password = document.getElementById('Password').value;
     var username = document.getElementById('Username').value;
@@ -30,10 +60,10 @@ function registerCMS(id_in, token_in) {
         alert("Se debe introcucir un nombre de usuario");
     } else if (password == "") {
         alert("Se debe introducir una contraseña");
-    } else registerCMS_connect(id_in, token_in, username, password, route, name,/* image, */address, telephone, openingHours);
+    } else registerCMS_connect(id_in, token_in, username, password, route, name, /* image, */ address, telephone, openingHours);
 }
 
-function registerCMS_connect(id_in, token_in, username_in, password_in, route_in, name_in,address_in, telephone_in, openingHours_in) {
+function registerCMS_connect(id_in, token_in, username_in, password_in, route_in, name_in, address_in, telephone_in, openingHours_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/admin/cms/register/" + id_in
     $.ajax({
@@ -48,7 +78,7 @@ function registerCMS_connect(id_in, token_in, username_in, password_in, route_in
             "password": password_in,
             //"route": route_in,
             "name": name_in,
-           //"image": image_in,
+            //"image": image_in,
             "address": address_in,
             "telephone": telephone_in,
             "openingHours": openingHours_in
@@ -87,10 +117,10 @@ function logout_connect(id_in, token_in) {
                 document.cookie = "id_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "token_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "username_admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                window.location.href = "index.html";             
+                window.location.href = "index.html";
             } else
                 alert("Error al cerrar sesion");
-                return null;
+            return null;
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
