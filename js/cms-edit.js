@@ -73,6 +73,7 @@ function readCMS_connect(id_in, userId_in, token_in) {
                 for (i in selectRoute.options) {
                     if (selectRoute.options[i].value == r.responseJSON.user.route._id){
                         selectRoute.options[i].selected = true;
+                        $('#RouteName').append(selectRoute.options[i].text);
                     }
                 }
                 $('#Telephone').val(r.responseJSON.user.telephone);
