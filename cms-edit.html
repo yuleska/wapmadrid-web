@@ -169,7 +169,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-4">
-                                                                            <input type="password" placeholder="contraseña" class="form-control" />
+                                                                            <input type="password" id="RePassword" placeholder="contraseña" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -241,7 +241,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button class="btn btn-orange btn-block">Guardar cambios</button>
+                                                            <button onclick="updateCMS(getCookie('id_admin'),getCookie('token_admin'))" class="btn btn-orange btn-block">Guardar cambios</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->

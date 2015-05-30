@@ -71,7 +71,7 @@ function readCMS_connect(id_in, userId_in, token_in) {
                 $('#CMSname1').val(r.responseJSON.user.name);
                 var selectRoute = document.getElementById('Route');
                 for (i in selectRoute.options) {
-                    if (selectRoute.options[i].value == r.responseJSON.user.route._id){
+                    if (selectRoute.options[i].value == r.responseJSON.user.route._id) {
                         selectRoute.options[i].selected = true;
                         $('#RouteName').append(selectRoute.options[i].text);
                     }
@@ -86,6 +86,62 @@ function readCMS_connect(id_in, userId_in, token_in) {
             alert("No se ha podido realizar la peticion");
         }
     });
+}
+
+function updateCMS(id_in, token_in) {
+    var password = document.getElementById('Password').value;
+    var rePassword = document.getElementById('RePassword').value;
+    var username = document.getElementById('Username1').value;
+    var name = document.getElementById('CMSname1').value;
+    var selectRoute = document.getElementById('Route');
+    var route = selectRoute.options[selectRoute.selectedIndex].value;
+    //var email = document.getElementById('Email').value;
+    var telephone = document.getElementById('Telephone').value;
+    var openingHours = document.getElementById('OpeningHours').value;
+    var address = document.getElementById('Address').value;
+    if (username == "") {
+        alert("Se debe introcucir un nombre de usuario");
+    } else if (password == "") {
+        alert("Se debe introducir una contraseña");
+    } else if (password != rePassword) {
+        alert("Deben coincidir las contraseñas");
+    } else updateCMS_connect(username, password, id_in, token_in, name, route, telephone, openingHours, address);
+}
+
+function updateCMS_connect(username_in, password_in, id_in, token_in, name_in, route_in, telephone_in, openingHours_in, address_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlUpdate = urlBase + "/api/admin/cms/update/" + id_in
+    $.ajax({
+        url: urlUpdate,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in,
+            "username": username_in,
+            "password": password_in,
+            "name": name_in,
+            "route": route_in,
+            "address": address_in,
+            "telephone": telephone_in,
+            "openingHours": openingHours_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                alert("Cambios guardados con exito");
+                window.location.href = "cms-list.html";
+                event.preventDefault();
+            } else
+                alert("Error al guardar los cambios");
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+    return false;
 }
 
 function logout_connect(id_in, token_in) {
