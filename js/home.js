@@ -66,6 +66,7 @@ function logout_connect(id_in, token_in) {
             if (json.error == "0") {
                 document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "id_walker=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 window.location.href = "index.html";             
             } else
                 alert("Error al cerrar sesion");

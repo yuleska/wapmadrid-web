@@ -17,36 +17,6 @@ function checkCredentials() {
     }
 }
 
-function readallRoutes_connect() {
-    var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRoute = urlBase + "/api/routes/all"
-    $.ajax({
-        url: urlRoute,
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json",
-        type: "GET",
-        crossDomain: true,
-        data: {},
-        complete: function(r) {
-            console.log(r);
-            var json = JSON.parse(r.responseText);
-            if (json.error == "0") {
-                var selectRoute = document.getElementById('Route');
-                for (i in r.responseJSON.routes) {
-                    var text = r.responseJSON.routes[i].name;
-                    var value = r.responseJSON.routes[i]._id;
-                    selectRoute.options.add(new Option(text, value));
-                }
-            } else
-                alert("Error al leer las rutas");
-
-        },
-        onerror: function(e, val) {
-            alert("No se ha podido realizar la peticion");
-        }
-    });
-}
-
 function readallCMS_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/admin/cms/read/all/" + id_in
@@ -68,12 +38,12 @@ function readallCMS_connect(id_in, token_in) {
                     if (i % 2 == 0) {
                         $('#listallCMS').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">' + r.responseJSON.user[i].name + '</p></div><div class="col-md-2"><a onclick="readCMS_connect(this.id)" href="#" id="btn_' + r.responseJSON.user[i]._id + '" class="btn btn-orange">Editar</a></div></div></td></tr>');
                     } else {
-                        $('#listallCMS').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">' + r.responseJSON.user[i].name + '</p></div><div class="col-md-2"><a href="cms-edit.html"  onclick="readCMS_connect(this.id)" id="btn_' + r.responseJSON.user[i]._id + '" class="btn btn-orange">Editar</a></div></div></td></tr>');
+                        $('#listallCMS').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/cms.jpg" class="img-responsive" /></div><div class="col-md-9"><p class="title">' + r.responseJSON.user[i].name + '</p></div><div class="col-md-2"><a href="#"  onclick="readCMS_connect(this.id)" id="btn_' + r.responseJSON.user[i]._id + '" class="btn btn-orange">Editar</a></div></div></td></tr>');
 
                     }
                 }
             } else
-                alert("Error al leer los wappies");
+                alert("Error al leer los CMS");
 
         },
         onerror: function(e, val) {

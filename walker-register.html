@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>wapmadrid | resgistrar wappy</title>
     <meta charset="utf-8">
@@ -24,16 +25,16 @@
     <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
     <script type="text/javascript" src="js/walker-register.js"></script>
 </head>
+
 <body>
-<script>
+    <script>
     checkCredentials();
     window.onload = function() {
         var id_in = getCookie("id");
         var token_in = getCookie("token");
-        readCMS_connect(id_in,token_in);
+        readCMS_connect(id_in, token_in);
     };
-</script>
-        
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -41,91 +42,91 @@
         <!--BEGIN TOPBAR-->
         <div id="header-topbar-option-demo" class="page-header-topbar">
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
-            <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a id="logo" href="home.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">wapmadrid</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
-            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
-                
-                <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
-                    <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Buscar Wappy..." class="form-control text-white"/></div>
-                </form> 
-                <ul class="nav navbar navbar-top-links navbar-right mbn">
-                    <!--<li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-blue">3</span></a>
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a id="logo" href="home.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">wapmadrid</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+                <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                    <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
+                        <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a>
+                            <input type="text" placeholder="Buscar Wappy..." class="form-control text-white" />
+                        </div>
+                    </form>
+                    <ul class="nav navbar navbar-top-links navbar-right mbn">
+                        <!--<li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-blue">3</span></a>
                         
                     </li>
                     <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-violet">7</span></a>
                         
                     </li>-->
-                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs" id="CMSname"></span>&nbsp;<span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil CMS</a></li>
-                            <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
+                        <li class="dropdown topbar-user">
+                            <a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle" />&nbsp;<span class="hidden-xs" id="CMSname"></span>&nbsp;<span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-user pull-right">
+                                <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil CMS</a></li>
+                                <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
                             <li><a href="#"><i class="fa fa-envelope"></i>Mensajes</a></li>-->
-                            <li class="divider"></li>
-                            <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                                <li class="divider"></li>
+                                <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-                data-position="right" class="navbar-default navbar-static-side">
-            <div class="sidebar-collapse menu-scroll">
-                <ul id="side-menu" class="nav">
-                    
-                    <div class="clearfix"></div>
-                    <li><a href="home.html"><i class="fa fa-tachometer fa-fw">
+            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" class="navbar-default navbar-static-side">
+                <div class="sidebar-collapse menu-scroll">
+                    <ul id="side-menu" class="nav">
+                        <div class="clearfix"></div>
+                        <li><a href="home.html"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Inicio</span></a></li>
-                    <li  class="active"><a href="walker-register.html"><i class="fa fa-desktop fa-fw">
+                        <li class="active"><a href="walker-register.html"><i class="fa fa-desktop fa-fw">
                         <div class="icon-bg bg-pink"></div>
                     </i><span class="menu-title">Registrar Wappy</span></a>
-                       
-                    </li>
-
-                    <li><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
+                        </li>
+                        <li><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de Wappies</span></a>
-                          
-                    </li>
-                    <li><a href=""><i class="fa fa-send-o fa-fw">
+                        </li>
+                        <li><a href=""><i class="fa fa-send-o fa-fw">
                         <div class="icon-bg bg-green"></div>
                     </i><span class="menu-title">Rutas</span></a>
-                       
-                    </li>
+                        </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Grupos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="#"><i class="fa fa-users fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear grupo</span></a></li>
-                            <li><a href="#"><i class="fa fa-th-list fa-fw">
+                                <li><a href="#"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de grupos</span></a></li>
-                        </ul>
+                            </ul>
                         </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Eventos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear evento</span></a></li>
-                            <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
+                                <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de eventos</span></a></li>
-                        </ul>
-                        </li>                   
-                </ul>
-            </div>
-        </nav>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
@@ -146,182 +147,232 @@
                 <div class="page-content">
                     <div id="tab-general">
                         <div class="row mbl">
-                            <div class="col-lg-12"> 
+                            <div class="col-lg-12">
                                 <div class="col-md-12">
                                     <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
                                     </div>
-                                </div>     
+                                </div>
                             </div>
-                            <div class="col-lg-12">     
-                              <div class="row">
-                                <div class="col-md-12">
-                                    <h2>Perfil: Nombre Wappy</h2>
-                                    <div class="row mtl">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <div class="text-center mbl"><img src="images/avatar/wappy.png" alt="" class="img-responsive"/>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Perfil: Nombre Wappy</h2>
+                                        <div class="row mtl">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <div class="text-center mbl"><img src="images/avatar/wappy.png" alt="" class="img-responsive" />
+                                                    </div>
                                                 </div>
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Nombre de usuario</td>
+                                                            <td>Usuario Wappy</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correo electrónico</td>
+                                                            <td>nombre@ejemplo.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ruta del centro</td>
+                                                            <td><span class="label label-orange" style="font-weight:bold">Ruta asignada</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                            <table class="table table-striped table-hover">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Nombre de usuario</td>
-                                                        <td>Usuario Wappy</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correo electrónico</td>
-                                                        <td>nombre@ejemplo.com</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Ruta del centro</td>
-                                                        <td><span class="label label-orange">Ruta asignada</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active"><a href="#tab-register" data-toggle="tab">Registro</a></li>
-                                            </ul>
-                                            <div id="generalTabContent" class="tab-content">
-                                                <div id="tab-register" class="tab-pane fade in active">
-                                                    <form action="#" class="form-horizontal"><h3>Configuración de la cuenta</h3>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Correo electrónico</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><input type="email" id="Email" placeholder="nombre@ejemplo.com" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Nombre de usuario</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" id="Username" placeholder="nombre de usuario" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Contraseña</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><input type="password" id="Password" placeholder="contraseña" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Confirmar contraseña</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><input type="password" id="RePassword" placeholder="contraseña" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h3>Datos de perfil</h3>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Nombre</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" id="FirstName" placeholder="nombre" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Apellido</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" id="LastName" placeholder="apellido" class="form-control"/></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Sexo</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9">
-                                                                        <div class="radio"><label class="radio-inline"><input type="radio" id="Male"/>&nbsp;
-                                                                            Hombre</label><label class="radio-inline"><input type="radio" id="Female" />&nbsp;
-                                                                            Mujer</label>
+                                            <div class="col-md-9">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#tab-register" data-toggle="tab">Registro</a></li>
+                                                </ul>
+                                                <div id="generalTabContent" class="tab-content">
+                                                    <div id="tab-register" class="tab-pane fade in active">
+                                                        <form action="#" class="form-horizontal">
+                                                            <h3>Configuración de la cuenta</h3>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Correo electrónico</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <input type="email" id="Email" placeholder="nombre@ejemplo.com" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Fecha de nacimiento</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4 "><input type="date" id="BirthDate" /></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Nombre de usuario</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <input type="text" id="Username" placeholder="nombre de usuario" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                         <div class="form-group"><label class="col-sm-3 control-label">Ciudad</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><input type="text" id="City" placeholder="ciudad" class="form-control"/></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Contraseña</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <input type="password" id="Password" placeholder="contraseña" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Altura (m)</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" id="Height" placeholder="altura" class="form-control"/></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Confirmar contraseña</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <input type="password" id="RePassword" placeholder="contraseña" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Peso (Kg)</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" id="Weight" placeholder="peso" class="form-control"/></div>
+                                                            <hr/>
+                                                            <h3>Datos de perfil</h3>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Nombre</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <input type="text" id="FirstName" placeholder="nombre" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Fumador</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><select class="form-control" id="Smoker">
-                                                                        <option>No</option>
-                                                                        <option>Si</option>
-                                                                    </select></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Apellido</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <input type="text" id="LastName" placeholder="apellido" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Consumo de alcohol</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><select class="form-control" id="Alcohol">
-                                                                        <option>No</option>
-                                                                        <option>Moderadamente</option>
-                                                                        <option>Con frecuencia</option>
-                                                                    </select></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Sexo</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <div class="radio">
+                                                                                <label class="radio-inline">
+                                                                                    <input name="sex" type="radio" id="Male" />&nbsp; Hombre
+                                                                                </label>
+                                                                                <label class="radio-inline">
+                                                                                    <input name="sex" type="radio" id="Female" />&nbsp; Mujer
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Sobre tí</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><textarea rows="3" id="About" class="form-control"></textarea></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Fecha de nacimiento</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4 ">
+                                                                            <input type="date" id="BirthDate" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <h3>Datos de contacto</h3>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Teléfono</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-4"><input type="text" id="Telephone" placeholder="teléfono" class="form-control"/></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Ciudad</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <input type="text" id="City" placeholder="ciudad" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group"><label class="col-sm-3 control-label">Dirección</label>
-                                                            <div class="col-sm-9 controls">
-                                                                <div class="row">
-                                                                    <div class="col-xs-9"><textarea rows="3" id="Address" class="form-control"></textarea></div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Altura (m)</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <input type="text" id="Height" placeholder="altura" class="form-control" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <hr/>
-                                                        <button onclick="registerWalker(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear Wappy</button>
-                                                    </form>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Peso (Kg)</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <input type="text" id="Weight" placeholder="peso" class="form-control" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Fumador</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <select class="form-control" id="Smoker">
+                                                                                <option>No</option>
+                                                                                <option>Si</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Consumo de alcohol</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <select class="form-control" id="Alcohol">
+                                                                                <option>No</option>
+                                                                                <option>Moderadamente</option>
+                                                                                <option>Con frecuencia</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Sobre tí</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <textarea rows="3" id="About" class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr/>
+                                                            <h3>Datos de contacto</h3>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Teléfono</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4">
+                                                                            <input type="text" id="Telephone" placeholder="teléfono" class="form-control" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-3 control-label">Dirección</label>
+                                                                <div class="col-sm-9 controls">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-9">
+                                                                            <textarea rows="3" id="Address" class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr/>
+                                                            <button onclick="registerWalker(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear Wappy</button>
+                                                        </form>
+                                                    </div>
+                                                    <!-- END TAB-REGISTER -->
                                                 </div>
-                                                <!-- END TAB-REGISTER -->
                                             </div>
-                                            
-                               
                                         </div>
                                     </div>
                                 </div>
@@ -329,7 +380,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
                 <!--END CONTENT-->
             </div>
             <!--END PAGE WRAPPER-->
@@ -362,71 +412,71 @@
     <script src="script/jquery.flot.spline.js"></script>
     <script src="script/zabuto_calendar.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-
     <script src="script/index.js"></script>
     <!--CORE JAVASCRIPT-->
     <script src="script/main.js"></script>
     <script>
-function initialize() {
-  var mapProp1 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map1=new google.maps.Map(document.getElementById("googleMap1"),mapProp1);
+    function initialize() {
+        var mapProp1 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapProp1);
 
-    var mapProp2 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map2=new google.maps.Map(document.getElementById("googleMap2"),mapProp2);
-
-
-    var mapProp3 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map3=new google.maps.Map(document.getElementById("googleMap3"),mapProp3);
-
-    var mapProp4 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map4=new google.maps.Map(document.getElementById("googleMap4"),mapProp4);
+        var mapProp2 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map2 = new google.maps.Map(document.getElementById("googleMap2"), mapProp2);
 
 
-      var mapProp5 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map5=new google.maps.Map(document.getElementById("googleMap5"),mapProp5);
+        var mapProp3 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map3 = new google.maps.Map(document.getElementById("googleMap3"), mapProp3);
 
-      var mapProp6 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map6=new google.maps.Map(document.getElementById("googleMap6"),mapProp6);
+        var mapProp4 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map4 = new google.maps.Map(document.getElementById("googleMap4"), mapProp4);
 
-      var mapProp7 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map7=new google.maps.Map(document.getElementById("googleMap7"),mapProp7);
 
-      var mapProp8 = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map8=new google.maps.Map(document.getElementById("googleMap8"),mapProp8);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+        var mapProp5 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map5 = new google.maps.Map(document.getElementById("googleMap5"), mapProp5);
+
+        var mapProp6 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map6 = new google.maps.Map(document.getElementById("googleMap6"), mapProp6);
+
+        var mapProp7 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map7 = new google.maps.Map(document.getElementById("googleMap7"), mapProp7);
+
+        var mapProp8 = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map8 = new google.maps.Map(document.getElementById("googleMap8"), mapProp8);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </body>
+
 </html>
