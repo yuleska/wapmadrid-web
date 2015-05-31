@@ -34,7 +34,7 @@ function readHome_connect(id_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 $('#CMSname').append(r.responseJSON.name);
-                $('#Route').append(r.responseJSON.route);
+                $('#Route').append(r.responseJSON.route.name);
                 $('#RoutesCount').append(r.responseJSON.routesCount);
                 $('#GroupsCount').append(r.responseJSON.groupsCount);
                 $('#WalkersCount').append(r.responseJSON.walkersCount);         
