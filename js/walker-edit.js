@@ -92,6 +92,7 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 alert("here yuli");
+                $('#AllName').append(r.responseJSON.walker.firstName+" "+r.responseJSON.walker.lastName);
                 $('#Email1').append(r.responseJSON.walker.email);
                 $('#Email').val(r.responseJSON.walker.email);
                 $('#FirstName').val(r.responseJSON.walker.firstName)
@@ -100,7 +101,7 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
                 $('#About').val(r.responseJSON.walker.about);
                 $('#Height').val(r.responseJSON.walker.height);
                 var date = r.responseJSON.walker.birthDate;
-                date = date.substring(0,10);
+                date = date.substring(0, 10);
                 $('#BirthDate').val(date);
                 $('#Telephone').val(r.responseJSON.walker.telephone);
                 var selectSmoker = document.getElementById('Smoker');
@@ -115,17 +116,17 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
                         selectAlcohol.options[i].selected = true;
                     }
                 }
-                if (r.responseJSON.walker.sex){
+                if (r.responseJSON.walker.sex) {
                     var o = document.getElementById("Male").parentNode;
                     o.classList.add("checked");
-                }else{
+                } else {
                     var o = document.getElementById("Female").parentNode;
                     o.classList.add("checked");
                 }
                 var long = r.responseJSON.walker.weight.length;
-                $('#Weight').val(r.responseJSON.walker.weight[long-1].value);
+                $('#Weight').val(r.responseJSON.walker.weight[long - 1].value);
 
-                
+
                 //$('#Address').val(r.responseJSON.walker.address);
             } else
                 alert("Error al leer el CMS");
