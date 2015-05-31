@@ -67,8 +67,10 @@ function readCMS_connect(id_in, userId_in, token_in) {
                 alert("here yuli");
                 $('#CMSname').append(r.responseJSON.user.name);
                 $('#Username').append(r.responseJSON.user.username);
+                $('#Email').append(r.responseJSON.user.email);
                 $('#Username1').val(r.responseJSON.user.username);
                 $('#CMSname1').val(r.responseJSON.user.name);
+                $('#Email1').val(r.responseJSON.user.email);
                 var selectRoute = document.getElementById('Route');
                 for (i in selectRoute.options) {
                     if (selectRoute.options[i].value == r.responseJSON.user.route._id) {
@@ -98,7 +100,7 @@ function updateCMS(id_in, userId_in, token_in) {
     var name = document.getElementById('CMSname1').value;
     var selectRoute = document.getElementById('Route');
     var route = selectRoute.options[selectRoute.selectedIndex].value;
-    //var email = document.getElementById('Email').value;
+    var email = document.getElementById('Email1').value;
     var telephone = document.getElementById('Telephone').value;
     var openingHours = document.getElementById('OpeningHours').value;
     var address = document.getElementById('Address').value;
@@ -108,10 +110,10 @@ function updateCMS(id_in, userId_in, token_in) {
         alert("Se debe introducir una contraseña");
     } else if (password != rePassword) {
         alert("Deben coincidir las contraseñas");
-    } else updateCMS_connect(username, password, id_in, userId_in, token_in, name, route, telephone, openingHours, address);
+    } else updateCMS_connect(username, password, id_in, userId_in, token_in, name, route, email, telephone, openingHours, address);
 }
 
-function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in, name_in, route_in, telephone_in, openingHours_in, address_in) {
+function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in, name_in, route_in, email_in, telephone_in, openingHours_in, address_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlUpdate = urlBase + "/api/admin/cms/update/" + id_in
     $.ajax({
@@ -126,6 +128,7 @@ function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in,
             "username": username_in,
             "password": password_in,
             "name": name_in,
+            "email":email_in,
             "route": route_in,
             "address": address_in,
             "telephone": telephone_in,
