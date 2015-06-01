@@ -36,6 +36,7 @@ function readCMS_connect(id_in, token_in) {
                 $('#CMSname').append(r.responseJSON.name);
                 $('#CMSname1').append(r.responseJSON.name);
                 $('#Username').append(r.responseJSON.username);
+                $('#Route').append(r.responseJSON.route.name);
                 $('#CMSname2').val(r.responseJSON.name);
                 $('#Telephone').val(r.responseJSON.telephone);
                 $('#OpeningHours').val(r.responseJSON.openingHours);
