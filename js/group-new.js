@@ -107,18 +107,78 @@ function readWappies_connect(id_in, token_in) {
 }
 
 function newGroup(id_in, token_in) {
-    var name = document.getElementById('NameEvent').value;
-    var dateEvent = document.getElementById('DateEvent').value;
-    var timeEvent = document.getElementById('TimeEvent').value;
-    var description = document.getElementById('Description').value;
-    if (name == "" || dateEvent == "" || timeEvent == "" || description == "" ) {
+    var name = document.getElementById('GroupName').value;
+    var route = document.getElementById('Route').value;
+    var level = document.getElementById('Level').value;
+    var schedule = document.getElementById('Schedule').value;
+    var captain = document.getElementById('Captain').value;
+    if (name == "" || route == "" || level == "" || schedule == "" || captain == "") {
         alert("Se deben rellenar todos los campos");
     } else {
-        var date = dateEvent +";" +timeEvent;
-        newEvent_connect(id_in, token_in, name, date, description);
+        alert("here");
+        //newGroup_connect(id_in, token_in, name, route, level, schedule, captain);
     }
 }
 
+/*function newGroup_connect(id_in, token_in, name_in, route_in, level_in, schedule_in, captain_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRegister = urlBase + "/api/cms/group/create/" + id_in
+    $.ajax({
+        url: urlRegister,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in,
+            "name": name_in,
+            "route": route_in,
+            "level": level_in,
+            "schedule": schedule_in,
+            "captain": captain_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                window.location.href = "home.html";
+                event.preventDefault();
+            } else
+                alert("Error al crear el evento");
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}*/
+/*
+function readGroups_connect(id_in, token_in) {
+    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlRegister = urlBase + "/api/cms/group/list/" + id_in
+    $.ajax({
+        url: urlRegister,
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        type: "POST",
+        crossDomain: true,
+        data: {
+            "token": token_in
+        },
+        complete: function(r) {
+            console.log(r);
+            var json = JSON.parse(r.responseText);
+            if (json.error == "0") {
+                
+            } else
+                alert("Error al leer los wappies");
+
+        },
+        onerror: function(e, val) {
+            alert("No se ha podido realizar la peticion");
+        }
+    });
+}
+*/
 function logout_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/logout/" + id_in

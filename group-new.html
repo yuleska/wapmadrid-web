@@ -35,6 +35,7 @@
         var token_in = getCookie("token");
         readCMS_connect(id_in, token_in);
         readWappies_connect(id_in, token_in);
+        readGroups_connect(id_in,token_in);
     };
     </script>
     <div>
@@ -253,7 +254,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button onclick="registerWalker(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear grupo</button>
+                                                            <button onclick="newGroup(getCookie('id'),getCookie('token'))" class="btn btn-orange btn-block">Crear grupo</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->
