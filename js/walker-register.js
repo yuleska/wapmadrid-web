@@ -33,7 +33,8 @@ function readCMS_connect(id_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                $('#CMSname').append(r.responseJSON.name);               
+                $('#CMSname').append(r.responseJSON.name);
+                $('#Route').append(r.responseJSON.route.name);
             } else
                 alert("Error al leer los cambios");
                

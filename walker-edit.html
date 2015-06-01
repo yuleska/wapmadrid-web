@@ -170,7 +170,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Nombre de usuario</td>
-                                                            <td>Usuario Wappy</td>
+                                                            <td id="Username"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Correo electrónico</td>
@@ -209,7 +209,7 @@
                                                                 <div class="col-sm-9 controls">
                                                                     <div class="row">
                                                                         <div class="col-xs-9">
-                                                                            <input type="text" id="Username" placeholder="nombre de usuario" class="form-control" />
+                                                                            <input type="text" id="Username1" placeholder="nombre de usuario" class="form-control" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -373,7 +373,7 @@
                                                                 </div>
                                                             </div>
                                                             <hr/>
-                                                            <button type="submit" class="btn btn-orange btn-block">Guardar cambios</button>
+                                                            <button onclick="updateWalker(getCookie('id'),getCookie('id_walker'),getCookie('token'))" class="btn btn-orange btn-block">Guardar cambios</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-REGISTER -->

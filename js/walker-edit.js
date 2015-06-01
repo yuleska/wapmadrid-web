@@ -34,6 +34,7 @@ function readCMS_connect(id_in, token_in) {
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 $('#CMSname').append(r.responseJSON.name);
+                $('#Route').append(r.responseJSON.route.name);
             } else
                 alert("Error al leer el centro");
 
@@ -91,14 +92,16 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                alert("here yuli");
-                $('#AllName').append(r.responseJSON.walker.firstName+" "+r.responseJSON.walker.lastName);
+                $('#AllName').append(r.responseJSON.walker.firstName + " " + r.responseJSON.walker.lastName);
+                $('#Username').append(r.responseJSON.walker.username);
                 $('#Email1').append(r.responseJSON.walker.email);
+                $('#Username1').val(r.responseJSON.walker.username);
                 $('#Email').val(r.responseJSON.walker.email);
                 $('#FirstName').val(r.responseJSON.walker.firstName)
                 $('#LastName').val(r.responseJSON.walker.lastName)
                 $('#City').val(r.responseJSON.walker.city);
                 $('#About').val(r.responseJSON.walker.about);
+                $('#Address').val(r.responseJSON.walker.address);
                 $('#Height').val(r.responseJSON.walker.height);
                 var date = r.responseJSON.walker.birthDate;
                 date = date.substring(0, 10);
@@ -119,17 +122,16 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
                 if (r.responseJSON.walker.sex) {
                     var o = document.getElementById("Male").parentNode;
                     o.classList.add("checked");
+                    document.getElementById('Male').checked = true;
                 } else {
                     var o = document.getElementById("Female").parentNode;
                     o.classList.add("checked");
+                    document.getElementById('Female').checked = true;
                 }
                 var long = r.responseJSON.walker.weight.length;
                 $('#Weight').val(r.responseJSON.walker.weight[long - 1].value);
-
-
-                //$('#Address').val(r.responseJSON.walker.address);
             } else
-                alert("Error al leer el CMS");
+                alert("Error al leer Wappy");
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
@@ -137,32 +139,44 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
     });
 }
 
-function updateWalker(id_in, userId_in, token_in) {
-    console.log(token_in);
-    console.log(id_in);
-    console.log(userId_in);
+function updateWalker(id_in, id_walker_in, token_in) {
+    var email = document.getElementById('Email').value;
     var password = document.getElementById('Password').value;
     var rePassword = document.getElementById('RePassword').value;
     var username = document.getElementById('Username1').value;
-    var name = document.getElementById('CMSname1').value;
-    var selectRoute = document.getElementById('Route');
-    var route = selectRoute.options[selectRoute.selectedIndex].value;
-    var email = document.getElementById('Email1').value;
+    var firstName = document.getElementById('FirstName').value;
+    var lastName = document.getElementById('LastName').value;
+    var male = document.getElementById('Male').checked;
+    var female = document.getElementById('Female').checked;
+    if (male) {
+        var sex = true;
+    } else if (female) {
+        var sex = false;
+    } else {
+        alert("Se debe elegir un sexo");
+    }
+    var date = document.getElementById('BirthDate').value;
+    var birthDate = new Date(date);
+    var city = document.getElementById('City').value;
+    var height = document.getElementById('Height').value;
+    var weight = document.getElementById('Weight').value;
+    var smoker = document.getElementById('Smoker').selectedIndex;
+    var alcohol = document.getElementById('Alcohol').selectedIndex;
+    var about = document.getElementById('About').value;
     var telephone = document.getElementById('Telephone').value;
-    var openingHours = document.getElementById('OpeningHours').value;
     var address = document.getElementById('Address').value;
     if (username == "") {
         alert("Se debe introcucir un nombre de usuario");
     } else if (password == "") {
         alert("Se debe introducir una contraseña");
     } else if (password != rePassword) {
-        alert("Deben coincidir las contraseñas");
-    } else updateCMS_connect(username, password, id_in, userId_in, token_in, name, route, email, telephone, openingHours, address);
+        alert("Se debe introducir la misma contraseña en ambos campos");
+    } else updateWalker_connect(id_in, token_in, id_walker_in, email, username, password, firstName, lastName, sex, birthDate, city, height, weight, smoker, alcohol, about, telephone, address);
 }
 
-function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in, name_in, route_in, email_in, telephone_in, openingHours_in, address_in) {
+function updateWalker_connect(id_in, token_in, id_walker_in, email_in, username_in, password_in, firstName_in, lastName_in, sex_in, birthDate_in, city_in, height_in, weight_in, smoker_in, alcohol_in, about_in, telephone_in, address_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
-    var urlUpdate = urlBase + "/api/admin/cms/update/" + id_in
+    var urlUpdate = urlBase + "/api/cms/walker/info/" + id_in
     $.ajax({
         url: urlUpdate,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -171,22 +185,29 @@ function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in,
         crossDomain: true,
         data: {
             "token": token_in,
-            "userID": userId_in,
-            "username": username_in,
-            "password": password_in,
-            "name": name_in,
+            "walkerID":id_walker_in,
             "email": email_in,
-            "route": route_in,
-            "address": address_in,
+            //"username": username_in,
+            //"password": password_in,
+            "firstName": firstName_in,
+            "lastName": lastName_in,
+            "sex": sex_in,
+            "birthDate": birthDate_in,
+            "city": city_in,
+            //"height": height_in,
+            //"weight": weight_in,
+            //"smoker": smoker_in,
+            //"alcohol": alcohol_in,
+            "about": about_in,
             "telephone": telephone_in,
-            "openingHours": openingHours_in
+            "address": address_in
         },
         complete: function(r) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 alert("Cambios guardados con exito");
-                window.location.href = "cms-list.html";
+                window.location.href = "walker-list.html";
                 event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
