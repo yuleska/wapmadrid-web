@@ -48,6 +48,8 @@ function readallRoutes_connect() {
 }
 
 function readCMS_connect(id_in, token_in) {
+    console.log(id_in);
+    console.log(token_in);
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/read/" + id_in
     $.ajax({
@@ -116,11 +118,11 @@ function newGroup(id_in, token_in) {
         alert("Se deben rellenar todos los campos");
     } else {
         alert("here");
-        //newGroup_connect(id_in, token_in, name, route, level, schedule, captain);
+        newGroup_connect(id_in, token_in, name, route, level, schedule, captain);
     }
 }
 
-/*function newGroup_connect(id_in, token_in, name_in, route_in, level_in, schedule_in, captain_in) {
+function newGroup_connect(id_in, token_in, name_in, route_in, level_in, schedule_in, captain_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/group/create/" + id_in
     $.ajax({
@@ -150,7 +152,7 @@ function newGroup(id_in, token_in) {
             alert("No se ha podido realizar la peticion");
         }
     });
-}*/
+}
 /*
 function readGroups_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
