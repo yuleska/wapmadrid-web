@@ -33,10 +33,10 @@ function readCMS_connect(id_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                $('#CMSname').append(r.responseJSON.name);               
+                $('#CMSname').append(r.responseJSON.name);
             } else
                 alert("Error al leer el centro");
-               
+
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
@@ -53,28 +53,72 @@ function readEvents_connect(id_in, token_in) {
         dataType: "json",
         type: "GET",
         crossDomain: true,
-        data: {
-        },
+        data: {},
         complete: function(r) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
                 for (i in r.responseJSON.events) {
                     var eventData = r.responseJSON.events[i];
+                    //"2015-05-23;11:15"
+                    var day = eventData.date.substring(8, 10);
+                    var month = monthString(eventData.date.substring(5, 7));
+                    var hour = eventData.date.substring(11, 16);
                     console.log(eventData);
-                    if (i%2 == 0){
-                        $('#listEvents').append('<tr class="tbl-item" style="background-color:#dbdbdb"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+eventData.name+'</p></div><div class="col-md-2"><a href="walker-edit.html"  class="btn btn-orange">Editar</a></div></div></td></tr>');
-                    }else{
-                        $('#listEvents').append('<tr class="tbl-item"><td class=""><div class="row"><div class="col-md-1"><img src="images/avatar/wappy128.png" class="img-responsive" /></div><div class="col-md-9"><p class="title">'+eventData.name+'</p></div><div class="col-md-2"><a href="walker-edit.html"  class="btn btn-orange">Editar</a></div></div></td></tr>');
+                    if (i % 2 == 0) {
+                        $('#eventlist').append('<li><time style="background-color:#710096"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#f15900">Hora:<span style="color:black"> '+hour+'</span></p></div></li>');
+                    } else {
+                        $('#eventlist').append('<li><time style="background-color:#f15900"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title" style="color:#710096">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#710096">Hora:<span style="color:black"> '+hour+'</span></p></div></li>');
 
                     }
-                }              
+                }
             } else
                 alert("Error al leer los eventos");
-               
+
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
         }
     });
+}
+
+function monthString(month_in) {
+    var monthDesc = "";
+    if (month_in == "01") {
+        monthDesc = "ENE";
+    }
+    if (month_in == "02") {
+        monthDesc = "FEB";
+    }
+    if (month_in == "03") {
+        monthDesc = "MAR";
+    }
+    if (month_in == "04") {
+        monthDesc = "ABR";
+    }
+    if (month_in == "05") {
+        monthDesc = "MAY";
+    }
+    if (month_in == "06") {
+        monthDesc = "JUN";
+    }
+    if (month_in == "07") {
+        monthDesc = "JUL";
+    }
+    if (month_in == "08") {
+        monthDesc = "AGO";
+    }
+    if (month_in == "09") {
+        monthDesc = "SEP";
+    }
+    if (month_in == "10") {
+        monthDesc = "OCT";
+    }
+    if (month_in == "11") {
+        monthDesc = "NOV";
+    }
+    if (month_in == "12") {
+        monthDesc = "DIC";
+    }
+    return monthDesc;
 }

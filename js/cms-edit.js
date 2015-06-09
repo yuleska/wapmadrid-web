@@ -64,7 +64,6 @@ function readCMS_connect(id_in, userId_in, token_in) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                alert("here yuli");
                 $('#CMSname').append(r.responseJSON.user.name);
                 $('#Username').append(r.responseJSON.user.username);
                 $('#Email').append(r.responseJSON.user.email);

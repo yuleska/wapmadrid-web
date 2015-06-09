@@ -32,7 +32,7 @@
     window.onload = function() {
         var id_in = getCookie("id");
         var token_in = getCookie("token");
-        readHome_connect(id_in,token_in);
+        readHome_connect(id_in, token_in);
     };
     </script>
     <div>
@@ -91,32 +91,36 @@
                         <li><a href="routes.html"><i class="fa fa-send-o fa-fw">
                         <div class="icon-bg bg-green"></div>
                     </i><span class="menu-title">Rutas</span></a>
-                        </li>                       
+                        </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Grupos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="group-new.html"><i class="fa fa-users fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="group-new.html"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear grupo</span></a></li>
-                            <li><a href="#"><i class="fa fa-th-list fa-fw">
+                                <li><a href="#"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de grupos</span></a></li>
-                        </ul>
+                            </ul>
                         </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Eventos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear evento</span></a></li>
-                            <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
+                                <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de eventos</span></a></li>
-                        </ul>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -217,104 +221,6 @@
                     </div>
                     <!-- END JUMBOTRON -->
                     <br>
-                    <!-- BEGIN TIMELINE -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- The time line -->
-                            <ul class="timeline">
-                                <!-- timeline time label -->
-                                <li class="time-label">
-                                    <span class="bg-red">
-                                        10 Feb. 2014
-                                    </span>
-                                </li>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-envelope bg-success"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-                                        <h3 class="timeline-header"><a href="#">Support Team</a> sent you and email</h3>
-                                        <div class="timeline-body">
-                                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...
-                                        </div>
-                                        <div class='timeline-footer'>
-                                            <a class="btn btn-primary btn-xs">Read more</a>
-                                            <a class="btn btn-danger btn-xs">Delete</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-user bg-info"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-                                        <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-comments bg-violet"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-                                        <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-                                        <div class="timeline-body">
-                                            Take me to your leader! Switzerland is small and neutral! We are more like Germany, ambitious and misunderstood!
-                                        </div>
-                                        <div class='timeline-footer'>
-                                            <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline time label -->
-                                <li class="time-label">
-                                    <span class="bg-green">
-                                        3 Jan. 2014
-                                    </span>
-                                </li>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-camera bg-blue"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-                                        <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-                                        <div class="timeline-body">
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                                            <img src="http://placehold.it/150x100" alt="..." class='margin' />
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <!-- timeline item -->
-                                <li>
-                                    <i class="fa fa-video-camera bg-warning"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
-                                        <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
-                                        <div class="timeline-body">
-                                            <iframe width="300" height="169" src="//www.youtube.com/embed/fLe_qO4AE-M" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="timeline-footer">
-                                            <a href="#" class="btn btn-xs bg-warning">See comments</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- END timeline item -->
-                                <li>
-                                    <i class="fa fa-clock-o  bg-violet"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                    <!-- END TIMELINE -->
                 </div>
                 <!--END CONTENT-->
             </div>

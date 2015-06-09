@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>wapmadrid | lista wappies</title>
     <meta charset="utf-8">
@@ -25,16 +26,17 @@
     <link type="text/css" rel="stylesheet" href="styles/jplist-custom.css">
     <script type="text/javascript" src="js/walker-list.js"></script>
 </head>
+
 <body>
-<script>
+    <script>
     checkCredentials();
     window.onload = function() {
         var id_in = getCookie("id");
         var token_in = getCookie("token");
-        readCMS_connect(id_in,token_in);
-        readWappies_connect(id_in,token_in);
+        readCMS_connect(id_in, token_in);
+        readWappies_connect(id_in, token_in);
     };
-</script>
+    </script>
     <div>
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -42,93 +44,91 @@
         <!--BEGIN TOPBAR-->
         <div id="header-topbar-option-demo" class="page-header-topbar">
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
-            <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a id="logo" href="home.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">wapmadrid</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
-            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
-                
-                <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
-                    <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Buscar Wappy..." class="form-control text-white"/></div>
-                </form> 
-                <ul class="nav navbar navbar-top-links navbar-right mbn">
-                    <!--<li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-blue">3</span></a>
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a id="logo" href="home.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">wapmadrid</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+                <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                    <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
+                        <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a>
+                            <input type="text" placeholder="Buscar Wappy..." class="form-control text-white" />
+                        </div>
+                    </form>
+                    <ul class="nav navbar navbar-top-links navbar-right mbn">
+                        <!--<li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-blue">3</span></a>
                         
                     </li>
                     <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-violet">7</span></a>
                         
                     </li>-->
-                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs" id="CMSname"></span>&nbsp;<span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil CMS</a></li>
-                            <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
+                        <li class="dropdown topbar-user">
+                            <a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/wappy48x48.png" alt="" class="img-responsive img-circle" />&nbsp;<span class="hidden-xs" id="CMSname"></span>&nbsp;<span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-user pull-right">
+                                <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil CMS</a></li>
+                                <!--<li><a href="#"><i class="fa fa-calendar"></i>Calendario</a></li>
                             <li><a href="#"><i class="fa fa-envelope"></i>Mensajes</a></li>-->
-                            <li class="divider"></li>
-                            <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                                <li class="divider"></li>
+                                <li><a href="#" onclick="logout_connect(getCookie('id'),getCookie('token'))"><i class="fa fa-key"></i>Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-                data-position="right" class="navbar-default navbar-static-side">
-            <div class="sidebar-collapse menu-scroll">
-                <ul id="side-menu" class="nav">
-                    
-                    <div class="clearfix"></div>
-                    <li><a href="home.html"><i class="fa fa-tachometer fa-fw">
+            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" class="navbar-default navbar-static-side">
+                <div class="sidebar-collapse menu-scroll">
+                    <ul id="side-menu" class="nav">
+                        <div class="clearfix"></div>
+                        <li><a href="home.html"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Inicio</span></a></li>
-                    <li><a href="walker-register.html"><i class="fa fa-desktop fa-fw">
+                        <li><a href="walker-register.html"><i class="fa fa-desktop fa-fw">
                         <div class="icon-bg bg-pink"></div>
                     </i><span class="menu-title">Registrar Wappy</span></a>
-                       
-                    </li>
-
-                    <li class="active"><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
+                        </li>
+                        <li class="active"><a href="walker-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de Wappies</span></a>
-                          
-                    </li>
-                    <li><a href="routes.html"><i class="fa fa-send-o fa-fw">
+                        </li>
+                        <li><a href="routes.html"><i class="fa fa-send-o fa-fw">
                         <div class="icon-bg bg-green"></div>
                     </i><span class="menu-title">Rutas</span></a>
-                       
-                    </li>
+                        </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Grupos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="group-new.html"><i class="fa fa-users fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="group-new.html"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear grupo</span></a></li>
-                            <li><a href="#"><i class="fa fa-th-list fa-fw">
+                                <li><a href="#"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de grupos</span></a></li>
-                        </ul>
+                            </ul>
                         </li>
                         <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit fa-fw">
                         <div class="icon-bg bg-violet"></div>
                     </i><span class="menu-title">Eventos </span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li><a href="event-new.html"><i class="fa fa-pencil-square-o fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear evento</span></a></li>
-                            <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
+                                <li><a href="event-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de eventos</span></a></li>
-                        </ul>
-                        </li>                   
-                </ul>
-            </div>
-        </nav>
-          
-          
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
@@ -150,26 +150,22 @@
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
-                                
-                                            <div class="col-md-12">
-                                                <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
-                                                </div>
-                                            </div>
-                                
-                            </div>
-
-                            <div class="col-lg-12">
-                            
-                            <div class="page-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-body">
-                                <div class="box text-shadow">
-                                        <table class="demo-tbl" id="listWalkers">
-                                   </table>
+                                <div class="col-md-12">
+                                    <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
+                                    </div>
                                 </div>
-                                <!--<div id="grid-layout-table-1" class="box jplist">
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="page-content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel">
+                                                <div class="panel-body">
+                                                    <div class="box text-shadow">
+                                                        <table class="demo-tbl" id="listWalkers">
+                                                        </table>
+                                                    </div>
+                                                    <!--<div id="grid-layout-table-1" class="box jplist">
                                     <div class="jplist-ios-button"><i class="fa fa-sort"></i>Buscador</div>
                                     <div class="jplist-panel box panel-top">
                                         <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Resetear<i class="fa fa-share mls"></i></button>
@@ -214,14 +210,12 @@
                                         <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
                                     </div>
                                 </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                            
-                            </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -267,8 +261,8 @@
     <script src="script/modernizr.min.js"></script>
     <script src="script/jplist.min.js"></script>
     <script src="script/jplist.js"></script>
-
     <!--CORE JAVASCRIPT-->
     <script src="script/main.js"></script>
 </body>
+
 </html>

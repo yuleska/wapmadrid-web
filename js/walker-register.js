@@ -59,7 +59,7 @@ function registerWalker(id_in, token_in) {
     } else if (female){
         var sex = false;
     } else {
-        alert("Se debe de elegir un sexo");
+        alert("Se debe elegir el sexo");
     }
     var date = document.getElementById('BirthDate').value;
     var birthDate = new Date(date);
@@ -73,17 +73,18 @@ function registerWalker(id_in, token_in) {
     var address = document.getElementById('Address').value;
     if (username == "") {
         alert("Se debe introcucir un nombre de usuario");
-    } else if (password == "") {
+    } if (password == "" || (password != rePassword)) {
         alert("Se debe introducir una contraseña");
-    } else if (password != rePassword){
-        alert("Se debe introducir la misma contraseña");
-    } else registerWalker_connect(id_in, token_in, email, username, password, firstName, lastName, sex, birthDate, city, height, weight, smoker, alcohol, about, telephone, address);
+    } else {
+        alert("here yuli");
+        registerWalker_connect(id_in, token_in, email, username, password, firstName, lastName, sex, birthDate, city, height, weight, smoker, alcohol, about, telephone, address)};
 }
 
 
 function registerWalker_connect(id_in, token_in, email_in, username_in, password_in, firstName_in, lastName_in, sex_in, birthDate_in, city_in, height_in, weight_in, smoker_in, alcohol_in, about_in, telephone_in, address_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/walker/register/" + id_in
+    alert("here yuli");
     $.ajax({
         url: urlRegister,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -110,10 +111,12 @@ function registerWalker_connect(id_in, token_in, email_in, username_in, password
         },
         complete: function(r) {
             console.log(r);
+            alert("here yu ajax");
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                window.location.href = "walker-list.html";
-                event.preventDefault();
+                console.log("wappy save")
+                //window.location.href = "walker-list.html";
+                //event.preventDefault();
             } else
                 alert("Error al guardar los cambios");
         },
@@ -141,7 +144,8 @@ function logout_connect(id_in, token_in) {
             if (json.error == "0") {
                 document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                window.location.href = "index.html";             
+                document.cookie = "id_walker=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                window.location.href = "index.html";
             } else
                 alert("Error al cerrar sesion");
                 return null;
