@@ -66,9 +66,10 @@ function readEvents_connect(id_in, token_in) {
                     var hour = eventData.date.substring(11, 16);
                     console.log(eventData);
                     if (i % 2 == 0) {
-                        $('#eventlist').append('<li><time style="background-color:#710096"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#f15900">Hora:<span style="color:black"> '+hour+'</span></p></div></li>');
+                        $('#eventlist').append('<li><time style="background-color:#710096"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#f15900">Hora:<span style="color:black"> ' + hour + '</span></p></div></li>');
+
                     } else {
-                        $('#eventlist').append('<li><time style="background-color:#f15900"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title" style="color:#710096">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#710096">Hora:<span style="color:black"> '+hour+'</span></p></div></li>');
+                        $('#eventlist').append('<li><time style="background-color:#f15900"><span class="day">' + day + '</span><span class="month">' + month + '</span></time><div class="info"><h2 class="title" style="color:#710096">' + eventData.name + '</h2><p class="desc">' + eventData.text + '</p><p class="desc" style="color:#710096">Hora:<span style="color:black"> ' + hour + '</span></p></div></li>');
 
                     }
                 }

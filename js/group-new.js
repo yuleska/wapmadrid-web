@@ -153,34 +153,7 @@ function newGroup_connect(id_in, token_in, name_in, route_in, level_in, schedule
         }
     });
 }
-/*
-function readGroups_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRegister = urlBase + "/api/cms/group/list/" + id_in
-    $.ajax({
-        url: urlRegister,
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json",
-        type: "POST",
-        crossDomain: true,
-        data: {
-            "token": token_in
-        },
-        complete: function(r) {
-            console.log(r);
-            var json = JSON.parse(r.responseText);
-            if (json.error == "0") {
-                
-            } else
-                alert("Error al leer los wappies");
 
-        },
-        onerror: function(e, val) {
-            alert("No se ha podido realizar la peticion");
-        }
-    });
-}
-*/
 function logout_connect(id_in, token_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
     var urlRegister = urlBase + "/api/cms/logout/" + id_in

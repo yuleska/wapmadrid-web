@@ -37,7 +37,7 @@ function readHome_connect(id_in, token_in) {
                 $('#Route').append(r.responseJSON.route.name);
                 $('#RoutesCount').append(r.responseJSON.routesCount);
                 $('#GroupsCount').append(r.responseJSON.groupsCount);
-                $('#WalkersCount').append(r.responseJSON.walkersCount);         
+                $('#WalkersCount').append(r.responseJSON.walkersCount);        
             } else
                 alert("Error al leer los cambios");
                 return null;
