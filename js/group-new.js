@@ -117,7 +117,6 @@ function newGroup(id_in, token_in) {
     if (name == "" || route == "" || level == "" || schedule == "" || captain == "") {
         alert("Se deben rellenar todos los campos");
     } else {
-        alert("here");
         newGroup_connect(id_in, token_in, name, route, level, schedule, captain);
     }
 }

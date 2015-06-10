@@ -130,6 +130,89 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
                 }
                 var long = r.responseJSON.walker.weight.length;
                 $('#Weight').val(r.responseJSON.walker.weight[long - 1].value);
+
+                var weight = r.responseJSON.walker.weight;
+                var diet = r.responseJSON.walker.diet;
+                var dates = [];
+                var imcData = [];
+                for (i in weight) {
+                    var date = weight[i].date;
+                    var day = date.substring(8, 10);
+                    var month = date.substring(5, 7);
+                    var year = date.substring(0, 4);
+                    date = day + "-" + month + "-" + year;
+                    var imc = weight[i].imc.toFixed(2);
+                    dates.push(date);
+                    imcData.push(parseFloat(imc));
+                }
+                console.log(dates);
+                console.log(imcData);
+
+                var datesDiet = [];
+                var dietData = [];
+                for (i in diet) {
+                    var date = diet[i].date;
+                    var day = date.substring(8, 10);
+                    var month = date.substring(5, 7);
+                    var year = date.substring(0, 4);
+                    date = day + "-" + month + "-" + year;
+                    datesDiet.push(date);
+                    dietData.push(diet[i].value);
+                }
+                console.log(datesDiet);
+                console.log(dietData);
+
+
+                var chartImc = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'bar-chart-imc'
+                    },
+                    title: {
+                        text: 'Resultados IMC'
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Fecha'
+                        },
+                        categories: dates
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'IMC'
+                        }
+                    },
+                    series: [{
+                        name: 'IMC',
+                        data: imcData
+                    }]
+                });
+
+                var chartDiet = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'bar-chart-diet'
+                    },
+                    title: {
+                        text: 'Resultados Test dieta'
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Fecha'
+                        },
+                        categories: datesDiet
+                    },
+                    yAxis: {
+                        min:0,
+                        max:14,
+                        title: {
+                            text: 'Puntos'
+                        }
+                    },
+                    series: [{
+                        name: 'Puntos',
+                        data: dietData
+                    }]
+                });
+
             } else
                 alert("Error al leer Wappy");
         },
@@ -185,7 +268,7 @@ function updateWalker_connect(id_in, token_in, id_walker_in, email_in, username_
         crossDomain: true,
         data: {
             "token": token_in,
-            "walkerID":id_walker_in,
+            "walkerID": id_walker_in,
             "email": email_in,
             //"username": username_in,
             //"password": password_in,
@@ -194,10 +277,10 @@ function updateWalker_connect(id_in, token_in, id_walker_in, email_in, username_
             "sex": sex_in,
             "birthDate": birthDate_in,
             "city": city_in,
-            //"height": height_in,
-            //"weight": weight_in,
-            //"smoker": smoker_in,
-            //"alcohol": alcohol_in,
+            "height": height_in,
+            "weight": weight_in,
+            "smoker": smoker_in,
+            "alcohol": alcohol_in,
             "about": about_in,
             "telephone": telephone_in,
             "address": address_in
@@ -219,32 +302,91 @@ function updateWalker_connect(id_in, token_in, id_walker_in, email_in, username_
     return false;
 }
 
-function logout_connect(id_in, token_in) {
+function saveDietTest(id_in, id_walker_in, token_in) {
+    var answArray = [];
+    var res = 0;
+    var msg = "";
+    for (i = 0; i < 14; i++) {
+        var answ = "answ" + i;
+        console.log(answ);
+        var selectAnsw = document.getElementById(answ);
+        var answValue = selectAnsw.options[selectAnsw.selectedIndex].value;
+        answArray.push(parseInt(answValue));
+        res = res + parseInt(answValue);
+    }
+    console.log(answArray);
+    console.log(res);
+    if (res < 5) {
+        msg = "Muy baja adherencia a la dieta mediterránea";
+    } else if (res >= 5 && res <= 7) {
+        msg = "Baja adherencia a la dieta mediterránea";
+    } else if (res >= 8 && res <= 10) {
+        msg = "Buena adherencia  a la dieta mediterránea";
+    } else if (res >= 11 && res <= 14) {
+        msg = "Excelente adherencia a la dieta mediterránea";
+    }
+    console.log(msg);
+    alert(msg);
+    saveDietTest_connect(id_in, id_walker_in, token_in, res);
+
+}
+
+function saveDietTest_connect(id_in, id_walker_in, token_in, res_in) {
     var urlBase = "http://www.proyectowap.tk:3100";
-    var urlRegister = urlBase + "/api/cms/logout/" + id_in
+    var urlUpdate = urlBase + "/api/cms/walker/update/diet/" + id_in
     $.ajax({
-        url: urlRegister,
+        url: urlUpdate,
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         type: "POST",
         crossDomain: true,
         data: {
-            "token": token_in
+            "token": token_in,
+            "walkerID": id_walker_in,
+            "diet": res_in
         },
         complete: function(r) {
             console.log(r);
             var json = JSON.parse(r.responseText);
             if (json.error == "0") {
-                document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                document.cookie = "id_walker=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                window.location.href = "index.html";
+                alert("Cambios guardados con exito");
             } else
-                alert("Error al cerrar sesion");
-            return null;
+                alert("Error al guardar los cambios");
         },
         onerror: function(e, val) {
             alert("No se ha podido realizar la peticion");
         }
     });
+    return false;
 }
+
+function logout_connect(id_in, token_in) {
+        var urlBase = "http://www.proyectowap.tk:3100";
+        var urlRegister = urlBase + "/api/cms/logout/" + id_in
+        $.ajax({
+            url: urlRegister,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            type: "POST",
+            crossDomain: true,
+            data: {
+                "token": token_in
+            },
+            complete: function(r) {
+                console.log(r);
+                var json = JSON.parse(r.responseText);
+                if (json.error == "0") {
+                    document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                    document.cookie = "id_walker=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                    window.location.href = "index.html";
+                } else
+                    alert("Error al cerrar sesion");
+                return null;
+            },
+            onerror: function(e, val) {
+                alert("No se ha podido realizar la peticion");
+            }
+        });
+    }
+    ///api/cms/walker/update/exercise/

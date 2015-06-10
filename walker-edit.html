@@ -107,7 +107,7 @@
                                 <li><a href="group-new.html"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Crear grupo</span></a></li>
-                                <li><a href="#"><i class="fa fa-th-list fa-fw">
+                                <li><a href="group-list.html"><i class="fa fa-th-list fa-fw">
                         <div class="icon-bg bg-blue"></div>
                     </i><span class="menu-title">Lista de grupos</span></a></li>
                             </ul>
@@ -189,6 +189,7 @@
                                                     <li><a href="#tab-routes-groups" data-toggle="tab">Rutas y grupos</a></li>
                                                     <li><a href="#tab-diet" data-toggle="tab">Test dieta mediterránea</a></li>
                                                     <li><a href="#tab-exercise" data-toggle="tab">Test actividad física</a></li>
+                                                    <li><a href="#tab-progress" data-toggle="tab">Progreso</a></li>
                                                 </ul>
                                                 <div id="generalTabContent" class="tab-content">
                                                     <div id="tab-register" class="tab-pane fade in active">
@@ -605,9 +606,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Si</option>
-                                                                                <option>No</option>
+                                                                            <select class="form-control" id="answ0">
+                                                                                <option value="0">No</option>
+                                                                                <option value="1">Si</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -619,9 +620,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Tres o menos cucharadas</option>
-                                                                                <option>Cuatro o más cucharadas</option>
+                                                                            <select class="form-control" id="answ1">
+                                                                                <option value="0">Tres o menos cucharadas</option>
+                                                                                <option value="1">Cuatro o más cucharadas</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -633,9 +634,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Una o menos</option>
-                                                                                <option>Dos o más (alimentos una de ellas en ensalada o crudas)</option>
+                                                                            <select class="form-control" id="answ2">
+                                                                                <option value="0">Una o menos</option>
+                                                                                <option value="1">Dos o más (alimentos una de ellas en ensalada o crudas)</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -647,9 +648,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Dos o menos al día</option>
-                                                                                <option>Tres o más al día</option>
+                                                                            <select class="form-control" id="answ3">
+                                                                                <option value="0">Dos o menos al día</option>
+                                                                                <option value="1">Tres o más al día</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -661,9 +662,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de uno al día</option>
-                                                                                <option>Uno o más al día</option>
+                                                                            <select class="form-control" id="answ4">
+                                                                                <option value="0">Una o más al día</option>
+                                                                                <option value="1">Menos de una al día</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -675,9 +676,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de una al día</option>
-                                                                                <option>Una o más al día</option>
+                                                                            <select class="form-control" id="answ5">
+                                                                                <option value="0">Una o más al día</option>
+                                                                                <option value="1">Menos de una al día</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -689,9 +690,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de una al día</option>
-                                                                                <option>Una o más al día</option>
+                                                                            <select class="form-control" id="answ6">
+                                                                                <option value="0">Una o más al día</option>
+                                                                                <option value="1">Menos de una al día</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -703,9 +704,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Seis o menos vasos a la semana</option>
-                                                                                <option>Siete o más vasos a la semana</option>
+                                                                            <select class="form-control" id="answ7">
+                                                                                <option value="0">Seis o menos vasos a la semana</option>
+                                                                                <option value="1">Siete o más vasos a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -717,9 +718,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Dos o menos a la semana</option>
-                                                                                <option>Tres o más a la semana</option>
+                                                                            <select class="form-control" id="answ8">
+                                                                                <option value="0">Dos o menos a la semana</option>
+                                                                                <option value="1">Tres o más a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -731,9 +732,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Dos o menos a la semana</option>
-                                                                                <option>Tres o más a la semana</option>
+                                                                            <select class="form-control" id="answ9">
+                                                                                <option value="0">Dos o menos a la semana</option>
+                                                                                <option value="1">Tres o más a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -745,9 +746,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de dos a la semana</option>
-                                                                                <option>Dos o más a la semana</option>
+                                                                            <select class="form-control" id="answ10">
+                                                                                <option value="0">Dos o más a la semana</option>
+                                                                                <option value="1">Menos de dos a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -759,9 +760,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de tres a la semana</option>
-                                                                                <option>Tres o más a la semana</option>
+                                                                            <select class="form-control" id="answ11">
+                                                                                <option value="0">Menos de tres a la semana</option>
+                                                                                <option value="1">Tres o más a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -773,9 +774,9 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Si</option>
-                                                                                <option>No</option>
+                                                                            <select class="form-control" id="answ12">
+                                                                                <option value="0">No</option>
+                                                                                <option value="1">Si</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -787,15 +788,15 @@
                                                                 <div class="col-md-12 controls">
                                                                     <div class="row">
                                                                         <div class="col-md-4 col-md-offset-4">
-                                                                            <select class="form-control">
-                                                                                <option>Menos de dos a la semana</option>
-                                                                                <option>Dos o más a la semana</option>
+                                                                            <select class="form-control" id="answ13">
+                                                                                <option value="0">Menos de dos a la semana</option>
+                                                                                <option value="1">Dos o más a la semana</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" class="btn btn-orange btn-block">Guardar test</button>
+                                                            <button onclick="saveDietTest(getCookie('id'),getCookie('id_walker'),getCookie('token'))" class="btn btn-orange btn-block">Guardar test</button>
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-DIET -->
@@ -944,6 +945,27 @@
                                                         </form>
                                                     </div>
                                                     <!-- END TAB-EXERCISE -->
+                                                    <div id="tab-progress" class="tab-pane fade in">
+                                                        <div class="portlet box">
+                                                            <div class="portlet-header">
+                                                                <div class="caption">IMC</div>
+                                                                <div class="tools"><i class="fa fa-chevron-up"></i></div>
+                                                            </div>
+                                                            <div class="portlet-body">
+                                                                <div id="bar-chart-imc"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="portlet box">
+                                                            <div class="portlet-header">
+                                                                <div class="caption">Test Dieta</div>
+                                                                <div class="tools"><i class="fa fa-chevron-up"></i></div>
+                                                            </div>
+                                                            <div class="portlet-body">
+                                                                <div id="bar-chart-diet" style=""></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- END TAB-PROGRESS -->
                                                 </div>
                                             </div>
                                         </div>
@@ -986,6 +1008,8 @@
     <script src="script/zabuto_calendar.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="script/index.js"></script>
+    <!--LOADING SCRIPTS FOR CHARTS-->
+    <script src="script/highcharts.js"></script>
     <!--CORE JAVASCRIPT-->
     <script src="script/main.js"></script>
     <script>
