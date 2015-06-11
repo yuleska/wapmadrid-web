@@ -7,6 +7,16 @@
     color: #555;
 }
 
+.orgCap {
+    color: #f15900;
+    font-weight: bold;
+}
+
+.purCap {
+    color: #710096;
+    font-weight: bold;
+}
+
 .event-list {
     list-style: none;
     font-family: 'Lato', sans-serif;
