@@ -62,7 +62,12 @@ function readallRoutes_connect() {
                     var nameRoute = r.responseJSON.routes[i].name;
                     var idRoute = r.responseJSON.routes[i]._id;
                     var distanceRoute = r.responseJSON.routes[i].distance;
-                    $('#accordion').append('<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_' + idRoute + '" class="collapsed"><h4  style="font-weight:bold">' + nameRoute + '</h4>Longitud Ruta : ' + distanceRoute + ' metros</a></h4></div><div id="collapse_' + idRoute + '" class="panel-collapse collapse" style="height:0px;"><div class="panel-body"><div class="row"><div class="col-md-6"><img src="images/gallery/Arganzuela.png" class="img-responsive"></div><div class="col-md-6"><div id="map_' + idRoute + '" style="width:440px;height:379px;"></div></div></div></div></div></div>');
+                    if (i % 2 == 0) {
+                        $('#accordion').append('<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_' + idRoute + '" class="collapsed"><h4 class="orgCap">' + nameRoute + '</h4>Longitud Ruta : ' + distanceRoute + ' metros</a></h4></div><div id="collapse_' + idRoute + '" class="panel-collapse collapse" style="height:0px;"><div class="panel-body"><div class="row"><div class="col-md-6"><img src="images/gallery/Arganzuela.png" class="img-responsive"></div><div class="col-md-6"><div id="map_' + idRoute + '" style="width:440px;height:379px;"></div></div></div></div></div></div>');
+
+                    } else {
+                        $('#accordion').append('<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse_' + idRoute + '" class="collapsed"><h4 class="purCap">' + nameRoute + '</h4>Longitud Ruta : ' + distanceRoute + ' metros</a></h4></div><div id="collapse_' + idRoute + '" class="panel-collapse collapse" style="height:0px;"><div class="panel-body"><div class="row"><div class="col-md-6"><img src="images/gallery/Arganzuela.png" class="img-responsive"></div><div class="col-md-6"><div id="map_' + idRoute + '" style="width:440px;height:379px;"></div></div></div></div></div></div>');
+                    }
                     var mapProp = {
                         center: new google.maps.LatLng(40.437944725164726, -3.6795366500000455),
                         zoom: 12,
@@ -80,9 +85,9 @@ function readallRoutes_connect() {
                     var polyline = new google.maps.Polyline({
                         path: routeMap,
                         map: map,
-                        strokeColor: '#ff0000',
+                        strokeColor: '#710096',
                         strokeWeight: 5,
-                        strokeOpacity: 0.3,
+                        strokeOpacity: 1,
                         clickable: false
                     });
 
