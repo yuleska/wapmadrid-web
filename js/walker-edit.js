@@ -165,20 +165,44 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
 
                 var chartImc = new Highcharts.Chart({
                     chart: {
-                        renderTo: 'bar-chart-imc'
+                        renderTo: 'bar-chart-imc',
+                        backgroundColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 1,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, 'rgb(255, 255, 255)'],
+                                [1, 'rgb(218, 215, 214)']
+                            ]
+                        },
+                        plotBorderColor: '#f15900',
+                        plotBorderWidth: 2
                     },
                     title: {
                         text: 'Resultados IMC'
                     },
                     xAxis: {
                         title: {
-                            text: 'Fecha'
+                            text: 'FECHA'
                         },
+                        tickColor: '#710096',
+                        tickWidth: 2,
                         categories: dates
                     },
                     yAxis: {
                         title: {
                             text: 'IMC'
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            color: '#f15900',
+                            marker: {
+                                fillColor: '#710096'
+                            }
                         }
                     },
                     series: [{
@@ -189,22 +213,46 @@ function readWalker_connect(id_in, id_walker_in, token_in) {
 
                 var chartDiet = new Highcharts.Chart({
                     chart: {
-                        renderTo: 'bar-chart-diet'
+                        renderTo: 'bar-chart-diet',
+                        backgroundColor: {
+                            linearGradient: {
+                                x1: 0,
+                                y1: 0,
+                                x2: 1,
+                                y2: 1
+                            },
+                            stops: [
+                                [0, 'rgb(255, 255, 255)'],
+                                [1, 'rgb(218, 215, 214)']
+                            ]
+                        },
+                        plotBorderColor: '#f15900',
+                        plotBorderWidth: 2
                     },
                     title: {
                         text: 'Resultados Test dieta'
                     },
                     xAxis: {
                         title: {
-                            text: 'Fecha'
+                            text: 'FECHA'
                         },
+                        tickColor: '#710096',
+                        tickWidth: 2,
                         categories: datesDiet
                     },
                     yAxis: {
-                        min:0,
-                        max:14,
+                        min: 0,
+                        max: 14,
                         title: {
-                            text: 'Puntos'
+                            text: 'PUNTOS'
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            color: '#f15900',
+                            marker: {
+                                fillColor: '#710096'
+                            }
                         }
                     },
                     series: [{

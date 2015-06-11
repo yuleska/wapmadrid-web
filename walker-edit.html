@@ -954,6 +954,15 @@
                                                             <div class="portlet-body">
                                                                 <div id="bar-chart-imc"></div>
                                                             </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-md-offset-4">
+                                                                    <p>Normopeso: IMC 18,5 - 24,9 Kg/m2</p>
+                                                                    <p>Sobrepeso: IMC 25 -29,9 Kg/m2</p>
+                                                                    <p>Obesidad grado I con IMC 30-34,9 Kg/m2</p>
+                                                                    <p>Obesidad grado II con IMC 35-39,9 Kg/m2</p>
+                                                                    <p>Obesidad grado III con IMC >= 40 Kg/m2</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="portlet box">
                                                             <div class="portlet-header">
@@ -962,6 +971,14 @@
                                                             </div>
                                                             <div class="portlet-body">
                                                                 <div id="bar-chart-diet" style=""></div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-5 col-md-offset-4">
+                                                                    <p>Entre 11 y 14 puntos, excelente adherencia a la dieta mediterránea</p>
+                                                                    <p>Entre 8 y 10, buena adherencia a la dieta mediterránea</p>
+                                                                    <p>Entre 5 y 7,  baja adherencia a la dieta mediterránea</p>
+                                                                    <p>Menos de 5, muy baja adherencia a la dieta mediterránea</p>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1012,68 +1029,6 @@
     <script src="script/highcharts.js"></script>
     <!--CORE JAVASCRIPT-->
     <script src="script/main.js"></script>
-    <script>
-    function initialize() {
-        var mapProp1 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapProp1);
-
-        var mapProp2 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map2 = new google.maps.Map(document.getElementById("googleMap2"), mapProp2);
-
-
-        var mapProp3 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map3 = new google.maps.Map(document.getElementById("googleMap3"), mapProp3);
-
-        var mapProp4 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map4 = new google.maps.Map(document.getElementById("googleMap4"), mapProp4);
-
-
-        var mapProp5 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map5 = new google.maps.Map(document.getElementById("googleMap5"), mapProp5);
-
-        var mapProp6 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map6 = new google.maps.Map(document.getElementById("googleMap6"), mapProp6);
-
-        var mapProp7 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map7 = new google.maps.Map(document.getElementById("googleMap7"), mapProp7);
-
-        var mapProp8 = {
-            center: new google.maps.LatLng(51.508742, -0.120850),
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map8 = new google.maps.Map(document.getElementById("googleMap8"), mapProp8);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 </body>
 
 </html>
