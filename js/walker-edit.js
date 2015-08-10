@@ -18,7 +18,7 @@ function checkCredentials() {
 }
 
 function readCMS_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/cms/read/" + id_in
     $.ajax({
         url: urlRegister,
@@ -46,7 +46,7 @@ function readCMS_connect(id_in, token_in) {
 }
 
 function readallRoutes_connect() {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRoute = urlBase + "/api/routes/all"
     $.ajax({
         url: urlRoute,
@@ -76,7 +76,7 @@ function readallRoutes_connect() {
 }
 
 function readWalker_connect(id_in, id_walker_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlCMS = urlBase + "/api/cms/walker/read/" + id_in
     $.ajax({
         url: urlCMS,
@@ -306,7 +306,7 @@ function updateWalker(id_in, id_walker_in, token_in) {
 }
 
 function updateWalker_connect(id_in, token_in, id_walker_in, email_in, username_in, password_in, firstName_in, lastName_in, sex_in, birthDate_in, city_in, height_in, weight_in, smoker_in, alcohol_in, about_in, telephone_in, address_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlUpdate = urlBase + "/api/cms/walker/info/" + id_in
     $.ajax({
         url: urlUpdate,
@@ -380,7 +380,7 @@ function saveDietTest(id_in, id_walker_in, token_in) {
 }
 
 function saveDietTest_connect(id_in, id_walker_in, token_in, res_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlUpdate = urlBase + "/api/cms/walker/update/diet/" + id_in
     $.ajax({
         url: urlUpdate,
@@ -409,7 +409,7 @@ function saveDietTest_connect(id_in, id_walker_in, token_in, res_in) {
 }
 
 function logout_connect(id_in, token_in) {
-        var urlBase = "http://www.proyectowap.tk:3100";
+        var urlBase = "http://wapmadrid.madridsalud.es:3100";
         var urlRegister = urlBase + "/api/cms/logout/" + id_in
         $.ajax({
             url: urlRegister,

@@ -9,7 +9,7 @@ function login() {
 }
 
 function login_connect(username_in, password_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlLogin = urlBase + "/api/admin/login"
     $.ajax({
         url: urlLogin,

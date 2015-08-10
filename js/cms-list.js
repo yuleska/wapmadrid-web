@@ -18,7 +18,7 @@ function checkCredentials() {
 }
 
 function readallCMS_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/admin/cms/read/all/" + id_in
     $.ajax({
         url: urlRegister,
@@ -60,7 +60,7 @@ function readCMS_connect(id_in) {
 }
 
 function logout_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/admin/logout/" + id_in
     $.ajax({
         url: urlRegister,

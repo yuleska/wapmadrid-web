@@ -18,7 +18,7 @@ function checkCredentials() {
 }
 
 function readCMS_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/cms/read/" + id_in
     $.ajax({
         url: urlRegister,
@@ -45,7 +45,7 @@ function readCMS_connect(id_in, token_in) {
 }
 
 function readEvents_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/events/"
     $.ajax({
         url: urlRegister,

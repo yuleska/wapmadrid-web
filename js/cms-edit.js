@@ -18,7 +18,7 @@ function checkCredentials() {
 }
 
 function readallRoutes_connect() {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRoute = urlBase + "/api/routes/all"
     $.ajax({
         url: urlRoute,
@@ -48,7 +48,7 @@ function readallRoutes_connect() {
 }
 
 function readCMS_connect(id_in, userId_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlCMS = urlBase + "/api/admin/cms/read/" + id_in
     $.ajax({
         url: urlCMS,
@@ -113,7 +113,7 @@ function updateCMS(id_in, userId_in, token_in) {
 }
 
 function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in, name_in, route_in, email_in, telephone_in, openingHours_in, address_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlUpdate = urlBase + "/api/admin/cms/update/" + id_in
     $.ajax({
         url: urlUpdate,
@@ -151,7 +151,7 @@ function updateCMS_connect(username_in, password_in, id_in, userId_in, token_in,
 }
 
 function logout_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/admin/logout/" + id_in
     $.ajax({
         url: urlRegister,

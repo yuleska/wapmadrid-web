@@ -31,7 +31,7 @@ function updatePassword(id_in, token_in) {
 }
 
 function updatePassword_connect(username_in, password_in, id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlUpdate = urlBase + "/api/admin/update/password/" + id_in
     $.ajax({
         url: urlUpdate,
@@ -60,7 +60,7 @@ function updatePassword_connect(username_in, password_in, id_in, token_in) {
 }
 
 function logout_connect(id_in, token_in) {
-    var urlBase = "http://www.proyectowap.tk:3100";
+    var urlBase = "http://wapmadrid.madridsalud.es:3100";
     var urlRegister = urlBase + "/api/admin/logout/" + id_in
     $.ajax({
         url: urlRegister,
